@@ -1,3 +1,16 @@
-<p>
-  form-producto works!
-</p>
+<form (ngSubmit)="grabarProvincia()" >
+
+  <label for="codigo">Codigo</label> 
+  <input type="text" name="codigo" [(ngModel)]="nuevoProducto.codigo" > <br>
+
+  <label for="descripcion">Descripción</label>
+  <input type="text" name="descripcion" [(ngModel)]="nuevoProducto.descripcion" > <br>
+
+  <label for="precio">Precio</label>
+  <input type="text" name="precio" [(ngModel)]="nuevoProducto.precio" > <br>
+
+  <button>Guardar</button>
+
+</form>
+
+{{nuevoProducto | json}}

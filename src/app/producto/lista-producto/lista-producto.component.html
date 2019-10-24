@@ -1,3 +1,8 @@
-<p>
-  lista-producto works!
-</p>
+<h3>Listado Productos</h3>
+<ul>
+  <li *ngFor="let producto of _service.listadoProductos">
+    {{producto|json}}
+    <button (click)="borrarProducto(producto.id)">Borrar</button>
+    <button (click)="editarProducto(producto.id)">Editar</button>
+  </li>
+</ul>
