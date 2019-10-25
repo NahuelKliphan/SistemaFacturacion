@@ -1,29 +1,37 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from 'selenium-webdriver/http';
-import { Cliente } from '../model/cliente';
+import { HttpClient } from '@angular/common/http';
+import {Producto} from 'src/app/model/producto';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ServiceService {
-  serverURL:string = 'http://localhost:3000';
-  unCliente:Cliente;
-  constructor(private http: HttpClient) { 
-    
+
+  listadoProductos: Producto[] = [];
+
+  constructor(private _httpClient: HttpClient) { }
+
+  getProductos() {
+    this._httpClient.get<Producto[]>('http://localhost:3000/producto')
+      .subscribe(
+        (data) => this.listadoProductos = data
+      );
   }
 
-    //Funciones cliente
-    //get no se reconoce como metodo de http. excuse me?
-    getCliente() {
-      this.http.get<Cliente>(this.serverURL+'/clientes')
-      .subscribe(
-        (data) => {
-          this.unCliente = data;
-          return this.unCliente;
-        }
-      );
-    }
+  getProductoById(productoId:number) {
+    return this._httpClient.get<Producto>(`http://localhost:3000/producto/${productoId}`)
+  }
 
-    //Fin funnciones cliente
-  
+  agregarProducto(nuevoProducto:Producto) {
+    return this._httpClient.post('http://localhost:3000/producto', nuevoProducto)
+  }
+
+  borrarProducto(productoId:number) {
+    return this._httpClient.delete(`http://localhost:3000/producto/${productoId}`)
+  }
+
+  actualizarProducto(producto:Producto) {
+    return this._httpClient.put(`http://localhost:3000/producto/${producto.id}`, producto)
+  }
+
 }
