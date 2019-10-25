@@ -1,6 +1,31 @@
 # Sistema
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.4.
+- Sistema De Facturacion realizado para Laboratorio IV de la U.T.N.F.R.P.
+
+Alumnos:
+  - Heis Juan
+  - Guillermo gyarull
+  - Nahuel kliphan
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## Development server
 
