@@ -18,6 +18,7 @@ import { FacturaComponent } from './factura/factura/factura.component';
 
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
+import { PruebaComponent } from './prueba/prueba/prueba.component';
 
 
 const routes : Routes = [
@@ -51,7 +52,8 @@ const routes : Routes = [
     ItemComponent,
     ClienteComponent,
     ProductoComponent,
-    FacturaComponent
+    FacturaComponent,
+    PruebaComponent
   ],
   imports: [
     BrowserModule,
