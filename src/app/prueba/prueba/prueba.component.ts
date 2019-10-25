@@ -12,7 +12,7 @@ export class PruebaComponent implements OnInit {
 
   constructor(private _service: ServiceService) { }
 
-  unCliente : Cliente = new Cliente();
+  //sunCliente : Cliente = new Cliente();
 
   ngOnInit() 
   {

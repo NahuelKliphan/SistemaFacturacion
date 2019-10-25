@@ -38,8 +38,10 @@ export class ServiceService {
     return this._httpClient.put(`http://localhost:3000/producto/${producto.id}`, producto)
   }
 
-  //Metodos para los clientes con el servidor
 
+
+
+  //Metodos para los clientes con el servidor
   getClientes() {
     this._httpClient.get<Cliente[]>('http://localhost:3000/cliente')
       .subscribe(
@@ -48,19 +50,24 @@ export class ServiceService {
   }
 
   getClienteById(clienteId:number) {
-    return this._httpClient.get<Cliente>(`http://localhost:3000/cliente/${clienteId}`)
+    return this._httpClient.get<Cliente>(`http://localhost:3000/cliente/${clienteId}`);
   }
 
   agregarCliente(nuevoCliente:Cliente) {
-    return this._httpClient.post('http://localhost:3000/cliente', nuevoCliente)
+    return this._httpClient.post('http://localhost:3000/Cliente', nuevoCliente)
+    .subscribe(
+      data => {
+        console.log(data);
+      }
+    );
   }
 
   borrarCliente(clienteId:number) {
-    return this._httpClient.delete(`http://localhost:3000/cliente/${clienteId}`)
+    return this._httpClient.delete(`http://localhost:3000/Cliente/${clienteId}`);
   }
 
   actualizarCliente(cliente:Cliente) {
-    return this._httpClient.put(`http://localhost:3000/cliente/${cliente.id}`, cliente)
+    return this._httpClient.put(`http://localhost:3000/cliente/${cliente.id}`, cliente);
   }
 
 }

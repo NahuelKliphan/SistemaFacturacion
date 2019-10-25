@@ -1,14 +1,15 @@
 <form>
 
   <label for="nombre">Nombre</label>
-  <input type="text" name="nombre">
+  <input type="text" name="nombre" [(ngModel)]="unCliente.nombre">
 
   <label for="direccion">Direccion</label>
-  <input type="text" name="direccion">
+  <input type="text" name="direccion" [(ngModel)]="unCliente.direccion">
 
   <label for="cuit">Cuit</label>
-  <input type="text" name="cuit">
+  <input type="text" name="cuit" [(ngModel)]="unCliente.cuit">
 
-  <button>Guardar</button>
+  <button (click)="addCliente()">Guardar</button>
 
 </form>
+{{ unCliente | json}}
