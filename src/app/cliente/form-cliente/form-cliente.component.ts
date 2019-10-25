@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ServiceService } from 'src/app/servicio/service.service';
 
 @Component({
   selector: 'app-form-cliente',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FormClienteComponent implements OnInit {
 
-  constructor() { }
+  constructor(private database:ServiceService) { }
 
   ngOnInit() {
   }

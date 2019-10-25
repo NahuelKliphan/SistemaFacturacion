@@ -1,7 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
+import { Routes, RouterModule } from '@angular/router';
 import { FormClienteComponent } from './cliente/form-cliente/form-cliente.component';
 import { ListaClienteComponent } from './cliente/lista-cliente/lista-cliente.component';
 import { FormProductoComponent } from './producto/form-producto/form-producto.component';
@@ -12,6 +14,25 @@ import { HeaderComponent } from './menu/header/header.component';
 import { FooterComponent } from './menu/footer/footer.component';
 import { NavBarComponent } from './menu/nav-bar/nav-bar.component';
 import { ItemComponent } from './item/item/item.component';
+import { ClienteComponent } from './cliente/cliente/cliente.component';
+import { ProductoComponent } from './producto/producto/producto.component';
+import { FacturaComponent } from './factura/factura/factura.component';
+
+const routes : Routes = [
+  {
+    path: 'clientes',
+    component: ClienteComponent
+  },
+  {
+    path: 'productos',
+    component: ProductoComponent
+  },
+  {
+    path: 'facturacion',
+    component: FacturaComponent
+  }
+];
+
 
 @NgModule({
   declarations: [
@@ -25,10 +46,15 @@ import { ItemComponent } from './item/item/item.component';
     HeaderComponent,
     FooterComponent,
     NavBarComponent,
-    ItemComponent
+    ItemComponent,
+    ClienteComponent,
+    ProductoComponent,
+    FacturaComponent,
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    RouterModule.forRoot(routes),
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
