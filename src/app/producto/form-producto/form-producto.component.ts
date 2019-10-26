@@ -9,7 +9,7 @@ import {ServiceService} from 'src/app/servicio/service.service';
 })
 export class FormProductoComponent implements OnInit {
 
-  nuevoProducto : Producto = new Producto();
+  nuevoProducto : Producto = new Producto('','',0);
   edicion: boolean = false;
   
   constructor(private _service: ServiceService) { }
@@ -23,7 +23,7 @@ export class FormProductoComponent implements OnInit {
         .subscribe(
           (response) => {
             this.edicion = false;
-            this.nuevoProducto = new Producto();
+            this.nuevoProducto = new Producto('','',0);
 
           }
         )

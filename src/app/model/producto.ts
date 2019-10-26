@@ -5,7 +5,10 @@ export class Producto {
     descripcion: string;
     precioUnitario: number;
 
-    constructor(){
-
+    constructor(codigo: string, descripcion:string, precioUnitario:number){
+        this.id = 0;
+        this.codigo=codigo;
+        this.descripcion =descripcion;
+        this.precioUnitario = precioUnitario;
     }
 }

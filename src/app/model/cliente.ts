@@ -10,4 +10,5 @@ export class Cliente {
         this.direccion=direccion;
         this.cuit=cuit;
     }
+
 }
