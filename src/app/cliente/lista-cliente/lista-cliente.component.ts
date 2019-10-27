@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ServiceService } from 'src/app/servicio/service.service';
+import { Cliente } from 'src/app/model/cliente';
 
 @Component({
   selector: 'app-lista-cliente',
@@ -8,9 +9,11 @@ import { ServiceService } from 'src/app/servicio/service.service';
 })
 export class ListaClienteComponent implements OnInit {
 
+  busqueda: string ="";
   constructor(private database:ServiceService) { }
 
   ngOnInit() {
+    this.database.getClientes();
   }
 
 }

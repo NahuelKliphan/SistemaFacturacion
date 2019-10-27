@@ -1,3 +1,10 @@
-<p>
-  lista-cliente works!
-</p>
+Clientes en el sistema: <br>
+<div class="form-group">
+  <label>Buscar</label>
+  <input type="text" class="form-control" [(ngModel)]="busqueda">
+</div>
+<ul class="list-group">
+  <button class="list-group-item list-group-item-action" *ngFor="let unCliente of database.listadoClientes | buscar:busqueda"> 
+    Nombre: <b>{{ unCliente.nombre }}</b>, cuit: {{unCliente.cuit}}
+  </button>
+</ul>

@@ -43,6 +43,42 @@
       "nombre": "a",
       "direccion": "a",
       "cuit": "a"
+    },
+    {
+      "id": "ycTCMuq",
+      "nombre": "Juan",
+      "direccion": "pepe al 300",
+      "cuit": "uncuit"
+    },
+    {
+      "id": "0rj00oG",
+      "nombre": "Pepe",
+      "direccion": "su casa",
+      "cuit": "200000"
+    },
+    {
+      "id": "_2QeqZQ",
+      "nombre": "Pepe",
+      "direccion": "su casa",
+      "cuit": "200000"
+    },
+    {
+      "id": "-fHwtQr",
+      "nombre": "Pepe",
+      "direccion": "su casa",
+      "cuit": "200000"
+    },
+    {
+      "id": "ZR9hTvK",
+      "nombre": "Pepe",
+      "direccion": "su casa",
+      "cuit": "200000"
+    },
+    {
+      "id": "ny10NgD",
+      "nombre": "Pepe",
+      "direccion": "su casa",
+      "cuit": "200000"
     }
   ]
 }

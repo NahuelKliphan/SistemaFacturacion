@@ -1,15 +1,17 @@
-<form>
+<div>
+    <form>
+    <div class="form-group">
+    <label for="nombre">Nombre</label>
+    <input type="text" class="form-control" name="nombre" [(ngModel)]="unCliente.nombre">
+    
+    <label for="direccion">Direccion</label>
+    <input type="text" class="form-control" name="direccion" [(ngModel)]="unCliente.direccion">
 
-  <label for="nombre">Nombre</label>
-  <input type="text" name="nombre" [(ngModel)]="unCliente.nombre">
-
-  <label for="direccion">Direccion</label>
-  <input type="text" name="direccion" [(ngModel)]="unCliente.direccion">
-
-  <label for="cuit">Cuit</label>
-  <input type="text" name="cuit" [(ngModel)]="unCliente.cuit">
-
-  <button (click)="addCliente()">Guardar</button>
-
-</form>
+    <label for="cuit">Cuit</label>
+    <input type="text" class="form-control" name="cuit" [(ngModel)]="unCliente.cuit">
+    <br>
+    <button class="btn btn-outline-primary" (click)="addCliente()">Guardar</button>
+    </div>
+  </form>
+</div>
 {{ unCliente | json}}

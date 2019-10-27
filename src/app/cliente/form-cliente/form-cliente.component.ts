@@ -26,6 +26,7 @@ export class FormClienteComponent implements OnInit {
       this.unCliente.nombre,
       this.unCliente.direccion,
       this.unCliente.cuit ));
+      this.database.getClientes();
       console.log("!!!");
   }
 }

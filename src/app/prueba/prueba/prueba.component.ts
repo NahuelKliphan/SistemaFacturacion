@@ -11,10 +11,7 @@ import {Factura} from 'src/app/model/factura';
   styleUrls: ['./prueba.component.css']
 })
 export class PruebaComponent implements OnInit {
-
-  constructor(private _service: ServiceService) { }
-
-
+  
   unCliente1 : Cliente = new Cliente('pepe','Su casa','10-1547899-32');
   unCliente2 : Cliente = new Cliente('roberto','Su casa','11-1547899-32');
   unCliente3 : Cliente = new Cliente('Jose Luis','Su casa','12-1547899-32');
@@ -30,6 +27,9 @@ export class PruebaComponent implements OnInit {
   items : Item[] = [this.unItem1,this.unItem2,this.unItem3];
 
   unaFactura : Factura = new Factura('Factura C', new Date(),1,2,this.unCliente1,this.items);
+
+  constructor(private _service: ServiceService) { }
+
 
   ngOnInit() 
   {

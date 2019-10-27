@@ -57,7 +57,6 @@ export class ServiceService {
     return this._httpClient.post('http://localhost:3000/Cliente', nuevoCliente)
     .subscribe(
       data => {
-        console.log(data);
       }
     );
   }
