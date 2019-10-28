@@ -1,3 +1,71 @@
-<p>
-  form-factura works!
-</p>
+FACTURA:
+<div>
+  <form>
+    <div class="form-group">
+      <label for="nombre">Tipo</label>
+      <input type="text" class="form-control" name="tipoF" [(ngModel)]="unaFactura.tipo">
+
+      <label for="nombre">Numero</label>
+      <input type="text" class="form-control" name="nroF1" [(ngModel)]="unaFactura.numero">
+
+      <label for="cuit">Cliente</label>
+      <select class="form-control">
+        <option>A</option>
+        <option>B</option>
+        <option>C</option>
+      </select>
+
+      <label for="cuit">Fecha</label>
+      <input type="text" class="form-control" name="fechaF" [(ngModel)]="unaFactura.fecha">
+
+      <label for="direccion">Nombre</label>
+      <input type="text" class="form-control" name="nombreF" [(ngModel)]="unaFactura.nombre">
+
+      <label for="cuit">Cuit</label>
+      <input type="text" class="form-control" name="cuitF" [(ngModel)]="unaFactura.cuit">
+
+      <label for="cuit">Direccion</label>
+      <input type="text" class="form-control" name="direccionF" [(ngModel)]="unaFactura.direccion">
+      <br>
+      
+    </div>
+
+    <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">Cuit</th>
+          <th scope="col">Codigo</th>
+          <th scope="col">Descripcion</th>
+          <th scope="col">PU</th>
+          <th scope="col">IVA</th>
+          <th scope="col">Subtotal</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td>Mark</td>
+          <td>Otto</td>
+          <td>@mdo</td>
+        </tr>
+        <tr>
+          <th scope="row">2</th>
+          <td>Jacob</td>
+          <td>Thornton</td>
+          <td>@fat</td>
+        </tr>
+        <tr>
+          <th scope="row">3</th>
+          <td>Larry</td>
+          <td>the Bird</td>
+          <td>@twitter</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <label for="cuit">Total</label>
+    <input type="text" class="form-control" name="total" [(ngModel)]="unaFactura.total">
+    <br>
+  </form>
+</div>
+debug : {{ unCliente | json}}
