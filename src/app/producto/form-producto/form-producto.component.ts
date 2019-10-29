@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Producto } from 'src/app/model/producto';
-import {ServiceService} from 'src/app/servicio/service.service';
+import { ServiceService } from 'src/app/servicio/service.service';
 
 @Component({
   selector: 'app-form-producto',
@@ -9,40 +9,25 @@ import {ServiceService} from 'src/app/servicio/service.service';
 })
 export class FormProductoComponent implements OnInit {
 
-  nuevoProducto : Producto = new Producto('','',0);
-  edicion: boolean = false;
-  
-  constructor(private _service: ServiceService) { }
+  unProducto: Producto = {
+    "id": 0,
+    "codigo": "",
+    "descripcion": "",
+    "precioUnitario": 0
+  };
+  constructor(private database: ServiceService) { }
 
   ngOnInit() {
+
   }
 
-  grabarProvincia(){
-    if(this.edicion) {
-      this._service.actualizarProducto(this.nuevoProducto)
-        .subscribe(
-          (response) => {
-            this.edicion = false;
-            this.nuevoProducto = new Producto('','',0);
-
-          }
-        )
-    } else {
-      this._service.agregarProducto(this.nuevoProducto)
-        .subscribe(
-          (response) => console.log('Se creo el producto: ', response)
-        )
-    }
-  }
-
-  editarProducto(productoId:number) {
-    this._service.getProductoById(productoId)
-      .subscribe(
-        (producto) => {
-          this.nuevoProducto = producto;
-          this.edicion = true;
-        }
-      )
+  addProducto() {
+    this.database.agregarProducto(new Producto(
+      this.unProducto.codigo,
+      this.unProducto.descripcion,
+      this.unProducto.precioUnitario));
+    this.database.getProductos();
+    console.log("!!!");
   }
 
 }

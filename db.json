@@ -29,6 +29,36 @@
       "descripcion": "1",
       "precio": "1",
       "id": 1
+    },
+    {
+      "codigo": "8",
+      "descripcion": "1",
+      "precio": "1",
+      "id": 1
+    },
+    {
+      "id": 2,
+      "codigo": "123",
+      "descripcion": "123",
+      "precioUnitario": 0
+    },
+    {
+      "id": 3,
+      "codigo": "123",
+      "descripcion": "123",
+      "precioUnitario": 0
+    },
+    {
+      "id": 4,
+      "codigo": "1",
+      "descripcion": "1",
+      "precioUnitario": "111"
+    },
+    {
+      "id": 5,
+      "codigo": "978",
+      "descripcion": "987",
+      "precioUnitario": "400"
     }
   ],
   "Cliente": [
@@ -79,6 +109,12 @@
       "nombre": "Pepe",
       "direccion": "su casa",
       "cuit": "200000"
+    },
+    {
+      "id": "IPZiO8K",
+      "nombre": "Hola",
+      "direccion": "Hola",
+      "cuit": "123456798"
     }
   ]
 }

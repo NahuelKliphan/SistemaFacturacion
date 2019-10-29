@@ -1,14 +1,12 @@
-<h3>Listado Productos</h3>
-<div *ngFor="let producto of _service.listadoProductos" >
-
-  <label for="codigo">Id: </label> {{producto.id}} <br>
-  <label for="codigo">Codigo: </label> {{producto.codigo}} <br>
-  <label for="codigo">Descripción: </label> {{producto.descripcion}} <br>
-  <label for="codigo">Precio: </label> {{producto.precio}} <br>
- 
-  <button (click)="borrarProducto(producto.id)">Borrar</button>
-  <button (click)="editarProducto(producto.id)">Editar</button>
-
+Productos del sistema: <br>
+<div class="form-group">
+  <label>Buscar</label>
+  <input type="text" class="form-control" placeholder="Codigo" [(ngModel)]="busqueda">
 </div>
 
-
+<ul class="list-group">
+  <button class="list-group-item list-group-item-action"
+    *ngFor="let unProducto of database.listadoProductos | buscar:busqueda">
+    Codigo: <b>{{ unProducto.codigo }}</b>, Precio: {{unProducto.precioUnitario}}
+  </button>
+</ul>

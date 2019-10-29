@@ -9,8 +9,8 @@ import { Cliente } from 'src/app/model/cliente';
 })
 export class ListaClienteComponent implements OnInit {
 
-  busqueda: string ="";
-  constructor(private database:ServiceService) { }
+  busqueda: string = "";
+  constructor(private database: ServiceService) { }
 
   ngOnInit() {
     this.database.getClientes();

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import {Producto} from 'src/app/model/producto';
-import {Cliente} from 'src/app/model/cliente';
+import { Producto } from 'src/app/model/producto';
+import { Cliente } from 'src/app/model/cliente';
 
 @Injectable({
   providedIn: 'root'
@@ -22,24 +22,21 @@ export class ServiceService {
       );
   }
 
-  getProductoById(productoId:number) {
+  getProductoById(productoId: number) {
     return this._httpClient.get<Producto>(`http://localhost:3000/producto/${productoId}`)
   }
 
-  agregarProducto(nuevoProducto:Producto) {
-    return this._httpClient.post('http://localhost:3000/producto', nuevoProducto)
+  agregarProducto(nuevoProducto: Producto) {
+    return this._httpClient.post('http://localhost:3000/producto', nuevoProducto).subscribe(data => { })
   }
 
-  borrarProducto(productoId:number) {
+  borrarProducto(productoId: number) {
     return this._httpClient.delete(`http://localhost:3000/producto/${productoId}`)
   }
 
-  actualizarProducto(producto:Producto) {
+  actualizarProducto(producto: Producto) {
     return this._httpClient.put(`http://localhost:3000/producto/${producto.id}`, producto)
   }
-
-
-
 
   //Metodos para los clientes con el servidor
   getClientes() {
@@ -49,23 +46,23 @@ export class ServiceService {
       );
   }
 
-  getClienteById(clienteId:number) {
+  getClienteById(clienteId: number) {
     return this._httpClient.get<Cliente>(`http://localhost:3000/cliente/${clienteId}`);
   }
 
-  agregarCliente(nuevoCliente:Cliente) {
+  agregarCliente(nuevoCliente: Cliente) {
     return this._httpClient.post('http://localhost:3000/Cliente', nuevoCliente)
-    .subscribe(
-      data => {
-      }
-    );
+      .subscribe(
+        data => {
+        }
+      );
   }
 
-  borrarCliente(clienteId:number) {
+  borrarCliente(clienteId: number) {
     return this._httpClient.delete(`http://localhost:3000/Cliente/${clienteId}`);
   }
 
-  actualizarCliente(cliente:Cliente) {
+  actualizarCliente(cliente: Cliente) {
     return this._httpClient.put(`http://localhost:3000/cliente/${cliente.id}`, cliente);
   }
 
