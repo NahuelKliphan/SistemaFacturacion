@@ -24,6 +24,10 @@ import { BuscarCliente } from './pipes/buscar';
 
 const routes : Routes = [
   {
+    path: 'factura',
+    component: FacturaComponent
+  },
+  {
     path: 'clientes',
     component: ClienteComponent
   },

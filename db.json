@@ -67,6 +67,24 @@
       "nombre": "un pan lac",
       "direccion": "pan",
       "cuit": "250"
+    },
+    {
+      "id": 9,
+      "nombre": "un pan la la",
+      "direccion": "pan",
+      "cuit": "200"
+    },
+    {
+      "id": 10,
+      "nombre": "un pan la asdasdasdasd",
+      "direccion": "pan",
+      "cuit": "200"
+    },
+    {
+      "id": 11,
+      "nombre": "un pan la asdasdasdasd",
+      "direccion": "pan",
+      "cuit": "200"
     }
   ]
 }
