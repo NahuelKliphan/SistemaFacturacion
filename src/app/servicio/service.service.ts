@@ -13,8 +13,9 @@ export class ServiceService {
 
   constructor(private _httpClient: HttpClient) { }
 
-  //Metodos para los productos con el servidor
 
+
+  //FUNCIONES PARA MANEJO DE PRODUCTOS
   getProductos() {
     this._httpClient.get<Producto[]>('http://localhost:3000/producto')
       .subscribe(
@@ -38,32 +39,32 @@ export class ServiceService {
     return this._httpClient.put(`http://localhost:3000/producto/${producto.id}`, producto)
   }
 
-  //Metodos para los clientes con el servidor
+
+
+
+
+  //FUNCIONES PARA MANEJO DE CLIENTES
   getClientes() {
     this._httpClient.get<Cliente[]>('http://localhost:3000/cliente')
       .subscribe(
         (data) => this.listadoClientes = data
       );
   }
-
   getClienteById(clienteId: number) {
     return this._httpClient.get<Cliente>(`http://localhost:3000/cliente/${clienteId}`);
   }
-
   agregarCliente(nuevoCliente: Cliente) {
     return this._httpClient.post('http://localhost:3000/Cliente', nuevoCliente)
-      .subscribe(
-        data => {
-        }
-      );
+      .subscribe();
   }
-
-  borrarCliente(clienteId: number) {
-    return this._httpClient.delete(`http://localhost:3000/Cliente/${clienteId}`);
+  borrarCliente(clienteId: string) {
+    return this._httpClient.delete(`http://localhost:3000/Cliente/${clienteId}`)
+    .subscribe();
   }
 
   actualizarCliente(cliente: Cliente) {
-    return this._httpClient.put(`http://localhost:3000/cliente/${cliente.id}`, cliente);
+    return this._httpClient.put(`http://localhost:3000/cliente/${cliente.id}`, cliente)
+    .subscribe();
   }
 
 }

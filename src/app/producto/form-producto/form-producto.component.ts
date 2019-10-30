@@ -27,7 +27,6 @@ export class FormProductoComponent implements OnInit {
       this.unProducto.descripcion,
       this.unProducto.precioUnitario));
     this.database.getProductos();
-    console.log("!!!");
   }
 
 }

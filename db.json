@@ -59,62 +59,50 @@
       "codigo": "978",
       "descripcion": "987",
       "precioUnitario": "400"
+    },
+    {
+      "id": 6,
+      "codigo": "",
+      "descripcion": "",
+      "precioUnitario": 0
     }
   ],
   "Cliente": [
     {
-      "id": "1",
-      "nombre": "Nahuel",
-      "direccion": "Narnia",
-      "cuit": "789654123"
+      "id": 1,
+      "nombre": "pepito el granjero",
+      "direccion": "pan",
+      "cuit": "200"
     },
     {
-      "id": "DSYz4Q7",
-      "nombre": "a",
-      "direccion": "a",
-      "cuit": "a"
+      "id": 2,
+      "nombre": "asasaasasaasasaaaas",
+      "direccion": "pan",
+      "cuit": "200"
     },
     {
-      "id": "ycTCMuq",
-      "nombre": "Juan",
-      "direccion": "pepe al 300",
-      "cuit": "uncuit"
+      "id": 3,
+      "nombre": "pepito el gasaasasasasasaaaasassssssaasa",
+      "direccion": "pan",
+      "cuit": "200"
     },
     {
-      "id": "0rj00oG",
-      "nombre": "Pepe",
-      "direccion": "su casa",
-      "cuit": "200000"
+      "id": 4,
+      "nombre": "paso algo aca che",
+      "direccion": "pan",
+      "cuit": "200"
     },
     {
-      "id": "_2QeqZQ",
-      "nombre": "Pepe",
-      "direccion": "su casa",
-      "cuit": "200000"
+      "id": 5,
+      "nombre": "paso aalgo otra vez",
+      "direccion": "casa",
+      "cuit": "un cuit"
     },
     {
-      "id": "-fHwtQr",
-      "nombre": "Pepe",
-      "direccion": "su casa",
-      "cuit": "200000"
-    },
-    {
-      "id": "ZR9hTvK",
-      "nombre": "Pepe",
-      "direccion": "su casa",
-      "cuit": "200000"
-    },
-    {
-      "id": "ny10NgD",
-      "nombre": "Pepe",
-      "direccion": "su casa",
-      "cuit": "200000"
-    },
-    {
-      "id": "IPZiO8K",
-      "nombre": "Hola",
-      "direccion": "Hola",
-      "cuit": "123456798"
+      "id": 6,
+      "nombre": "un pan la",
+      "direccion": "pan",
+      "cuit": "200"
     }
   ]
 }
