@@ -1,79 +1,31 @@
 {
   "Producto": [
     {
-      "codigo": "3",
-      "descripcion": "1",
-      "precio": "1",
-      "id": 1
-    },
-    {
-      "codigo": "4",
-      "descripcion": "1",
-      "precio": "1",
-      "id": 1
-    },
-    {
-      "codigo": "5",
-      "descripcion": "1",
-      "precio": "1",
-      "id": 1
-    },
-    {
-      "codigo": "6",
-      "descripcion": "1",
-      "precio": "1",
-      "id": 1
-    },
-    {
-      "codigo": "7",
-      "descripcion": "1",
-      "precio": "1",
-      "id": 1
-    },
-    {
-      "codigo": "8",
-      "descripcion": "1",
-      "precio": "1",
-      "id": 1
+      "id": 1,
+      "codigo": "1",
+      "descripcion": "Pan",
+      "precioUnitario": "10"
     },
     {
       "id": 2,
-      "codigo": "123",
-      "descripcion": "123",
-      "precioUnitario": 0
+      "codigo": "2",
+      "descripcion": "Pepino",
+      "precioUnitario": "90"
     },
     {
       "id": 3,
-      "codigo": "123",
-      "descripcion": "123",
-      "precioUnitario": 0
+      "codigo": "3",
+      "descripcion": "Esponja",
+      "precioUnitario": "49.9"
     },
     {
       "id": 4,
-      "codigo": "1",
-      "descripcion": "1",
-      "precioUnitario": "111"
-    },
-    {
-      "id": 5,
-      "codigo": "978",
-      "descripcion": "987",
-      "precioUnitario": "400"
-    },
-    {
-      "id": 6,
-      "codigo": "",
-      "descripcion": "",
-      "precioUnitario": 0
+      "codigo": "3",
+      "descripcion": "Esponja",
+      "precioUnitario": "70"
     }
   ],
   "Cliente": [
-    {
-      "id": 1,
-      "nombre": "pepito el granjero",
-      "direccion": "pan",
-      "cuit": "200"
-    },
     {
       "id": 2,
       "nombre": "asasaasasaasasaaaas",
@@ -103,6 +55,18 @@
       "nombre": "un pan la",
       "direccion": "pan",
       "cuit": "200"
+    },
+    {
+      "id": 7,
+      "nombre": "un pan la",
+      "direccion": "pan",
+      "cuit": "250"
+    },
+    {
+      "id": 8,
+      "nombre": "un pan lac",
+      "direccion": "pan",
+      "cuit": "250"
     }
   ]
 }

@@ -22,11 +22,29 @@ export class FormProductoComponent implements OnInit {
   }
 
   addProducto() {
-    this.database.agregarProducto(new Producto(
-      this.unProducto.codigo,
-      this.unProducto.descripcion,
-      this.unProducto.precioUnitario));
-    this.database.getProductos();
+    if(this.unProducto.id !=0){
+      this.database.agregarProducto(new Producto(
+        this.unProducto.codigo,
+        this.unProducto.descripcion,
+        this.unProducto.precioUnitario));
+      this.database.getProductos();
+    }
+    else
+    {
+      this.database.actualizarProducto(
+        {
+        "id": this.unProducto.id,
+        "descripcion": this.unProducto.descripcion,
+        "precioUnitario": this.unProducto.precioUnitario,
+        "codigo":this.unProducto.codigo
+      });
+    }
+    
+  }
+
+  editarProducto(unProducto) {
+    this.unProducto = unProducto;
+    console.log(unProducto);
   }
 
 }

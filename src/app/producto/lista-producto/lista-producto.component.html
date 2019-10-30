@@ -5,8 +5,7 @@ Productos del sistema: <br>
 </div>
 
 <ul class="list-group">
-  <button class="list-group-item list-group-item-action"
-    *ngFor="let unProducto of database.listadoProductos | buscar:busqueda">
-    Codigo: <b>{{ unProducto.codigo }}</b>, Precio: {{unProducto.precioUnitario}}
+  <button class="list-group-item list-group-item-action" *ngFor="let unProducto of database.listadoProductos | buscar:busqueda">
+    Codigo: <b>{{ unProducto.codigo }}</b>, Precio: {{unProducto.precioUnitario}}<button class="darespacio btn btn-dark" (click)="solicitarModificacion(unProducto)">Editar</button> <button class="btn btn-danger darespacio" (click)="eliminarProducto(unProducto.id)">Borrar</button>
   </button>
 </ul>

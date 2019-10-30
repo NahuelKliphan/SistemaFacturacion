@@ -31,12 +31,12 @@ export class ServiceService {
     return this._httpClient.post('http://localhost:3000/producto', nuevoProducto).subscribe(data => { })
   }
 
-  borrarProducto(productoId: number) {
-    return this._httpClient.delete(`http://localhost:3000/producto/${productoId}`)
+  borrarProducto(productoId: string) {
+    return this._httpClient.delete(`http://localhost:3000/producto/${productoId}`).subscribe();
   }
 
   actualizarProducto(producto: Producto) {
-    return this._httpClient.put(`http://localhost:3000/producto/${producto.id}`, producto)
+    return this._httpClient.put(`http://localhost:3000/producto/${producto.id}`, producto).subscribe();
   }
 
 

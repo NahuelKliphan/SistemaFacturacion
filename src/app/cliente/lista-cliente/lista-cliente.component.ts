@@ -21,7 +21,7 @@ export class ListaClienteComponent implements OnInit {
   }
 
 
-
+  
   solicitarModificacion(unCliente:Cliente){
     console.log(" away");
     this.clienteAmodificar.emit(unCliente); //eto no anda que sad la wea

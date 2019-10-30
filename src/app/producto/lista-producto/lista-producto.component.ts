@@ -10,10 +10,23 @@ import { ServiceService } from 'src/app/servicio/service.service';
 export class ListaProductoComponent implements OnInit {
 
   busqueda: string = "";
+  
   constructor(private database: ServiceService) { }
+
+  @Output() productoAmodificar = new EventEmitter();
 
   ngOnInit() {
     this.database.getProductos();
+  }
+
+  eliminarProducto(id:string){
+    this.database.borrarProducto(id);
+    this.database.getProductos();
+  }
+
+  solicitarModificacion(unProducto:Producto){
+    console.log(" away");
+    this.productoAmodificar.emit(unProducto);
   }
 
 }
