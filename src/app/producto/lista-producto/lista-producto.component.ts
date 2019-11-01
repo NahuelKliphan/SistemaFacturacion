@@ -21,7 +21,6 @@ export class ListaProductoComponent implements OnInit {
 
   eliminarProducto(id:string){
     this.database.borrarProducto(id);
-    this.database.getProductos();
   }
 
   solicitarModificacion(unProducto:Producto){

@@ -28,15 +28,22 @@ export class ServiceService {
   }
 
   agregarProducto(nuevoProducto: Producto) {
-    return this._httpClient.post('http://localhost:3000/producto', nuevoProducto).subscribe(data => { })
+    return this._httpClient.post('http://localhost:3000/producto', nuevoProducto).subscribe(data => {
+        this.getProductos();
+     })
   }
 
   borrarProducto(productoId: string) {
-    return this._httpClient.delete(`http://localhost:3000/producto/${productoId}`).subscribe();
+    return this._httpClient.delete(`http://localhost:3000/producto/${productoId}`).subscribe(
+      () => this.getProductos()
+    );
   }
 
   actualizarProducto(producto: Producto) {
-    return this._httpClient.put(`http://localhost:3000/producto/${producto.id}`, producto).subscribe();
+    return this._httpClient.put(`http://localhost:3000/producto/${producto.id}`, producto)
+    .subscribe(
+      () => this.getProductos()
+    );
   }
 
 

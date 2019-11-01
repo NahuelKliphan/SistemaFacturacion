@@ -27,27 +27,21 @@ export class FormProductoComponent implements OnInit {
   addProducto() {
     if(this.editar){
 
-      this.database.actualizarProducto(
-        {
+      this.database.actualizarProducto({
         "id": this.unProducto.id,
         "descripcion": this.unProducto.descripcion,
         "precioUnitario": this.unProducto.precioUnitario,
         "codigo":this.unProducto.codigo
       });
-
-      this.database.getProductos();
-    }
-    else
-    {
+    } else {
       this.database.agregarProducto(new Producto(
         this.unProducto.codigo,
         this.unProducto.descripcion,
         this.unProducto.precioUnitario));
-      this.database.getProductos();
     }
 
     this.editar =false;
-    
+    this.database.getProductos();
   }
 
   editarProducto(unProducto) {

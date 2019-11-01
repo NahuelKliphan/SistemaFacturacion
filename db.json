@@ -1,30 +1,5 @@
 {
-  "Producto": [
-    {
-      "id": 1,
-      "descripcion": "Culo",
-      "precioUnitario": "100",
-      "codigo": "1"
-    },
-    {
-      "id": 2,
-      "descripcion": "1",
-      "precioUnitario": "1",
-      "codigo": "1"
-    },
-    {
-      "id": 3,
-      "descripcion": "2",
-      "precioUnitario": "2",
-      "codigo": "2"
-    },
-    {
-      "id": 4,
-      "codigo": "7",
-      "descripcion": "7",
-      "precioUnitario": "7"
-    }
-  ],
+  "Producto": [],
   "Cliente": [
     {
       "id": 2,
@@ -83,6 +58,30 @@
     {
       "id": 11,
       "nombre": "un pan la asdasdasdasd",
+      "direccion": "pan",
+      "cuit": "200"
+    },
+    {
+      "id": 12,
+      "nombre": "Juan Pueblo",
+      "direccion": "pan",
+      "cuit": "200"
+    },
+    {
+      "id": 13,
+      "nombre": "Juan Pueblo",
+      "direccion": "pan",
+      "cuit": "200"
+    },
+    {
+      "id": 14,
+      "nombre": "Juan Pueblo",
+      "direccion": "pan",
+      "cuit": "200"
+    },
+    {
+      "id": 15,
+      "nombre": "Hola ke ase",
       "direccion": "pan",
       "cuit": "200"
     }
