@@ -15,6 +15,9 @@ export class FormProductoComponent implements OnInit {
     "descripcion": "",
     "precioUnitario": 0
   };
+
+  editar : boolean = false ;
+
   constructor(private database: ServiceService) { }
 
   ngOnInit() {
@@ -22,15 +25,8 @@ export class FormProductoComponent implements OnInit {
   }
 
   addProducto() {
-    if(this.unProducto.id !=0){
-      this.database.agregarProducto(new Producto(
-        this.unProducto.codigo,
-        this.unProducto.descripcion,
-        this.unProducto.precioUnitario));
-      this.database.getProductos();
-    }
-    else
-    {
+    if(this.editar){
+
       this.database.actualizarProducto(
         {
         "id": this.unProducto.id,
@@ -38,11 +34,24 @@ export class FormProductoComponent implements OnInit {
         "precioUnitario": this.unProducto.precioUnitario,
         "codigo":this.unProducto.codigo
       });
+
+      this.database.getProductos();
     }
+    else
+    {
+      this.database.agregarProducto(new Producto(
+        this.unProducto.codigo,
+        this.unProducto.descripcion,
+        this.unProducto.precioUnitario));
+      this.database.getProductos();
+    }
+
+    this.editar =false;
     
   }
 
   editarProducto(unProducto) {
+    this.editar = true;
     this.unProducto = unProducto;
     console.log(unProducto);
   }
