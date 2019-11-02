@@ -1,5 +1,18 @@
 {
-  "Producto": [],
+  "Producto": [
+    {
+      "id": 1,
+      "descripcion": "Pc",
+      "precioUnitario": "20000",
+      "codigo": "HQ2R4"
+    },
+    {
+      "id": 2,
+      "codigo": "asds",
+      "descripcion": "sad",
+      "precioUnitario": "ss"
+    }
+  ],
   "Cliente": [
     {
       "id": 2,

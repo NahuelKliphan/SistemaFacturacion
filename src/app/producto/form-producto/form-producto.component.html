@@ -1,6 +1,6 @@
 <div>
   <form>
-    <div class="form-group">
+    <div class="form-group ">
 
       <label for="codigo">Codigo</label>
       <input type="text" class="form-control" name="codigo" [(ngModel)]="unProducto.codigo"> <br>
@@ -9,13 +9,13 @@
       <input type="text" class="form-control" name="descripcion" [(ngModel)]="unProducto.descripcion"> <br>
 
       <label for="precio">Precio</label>
-      <input type="text" class="form-control" name="precioUnitario" [(ngModel)]="unProducto.precioUnitario"> <br>
+      <input type="text" class="form-control" name="precioUnitario" [(ngModel)]="unProducto.precioUnitario" > <br>
 
-      <button class="btn btn-outline-primary" (click)="addProducto()" >Guardar</button>
+      <div class="text-center">
+      <button class="btn btn-outline-primary " (click)="addProducto()" >Guardar</button>
+    </div>
 
     </div>
   </form>
 
 </div>
-
-{{unProducto | json}}

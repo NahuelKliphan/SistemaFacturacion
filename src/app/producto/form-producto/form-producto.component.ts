@@ -13,7 +13,7 @@ export class FormProductoComponent implements OnInit {
     "id": 0,
     "codigo": "",
     "descripcion": "",
-    "precioUnitario": 0
+    "precioUnitario": null
   };
 
   editar : boolean = false ;
@@ -23,8 +23,8 @@ export class FormProductoComponent implements OnInit {
   ngOnInit() {
 
   }
-
   addProducto() {
+    if(this.unProducto.codigo != "" && this.unProducto.precioUnitario != null ){
     if(this.editar){
 
       this.database.actualizarProducto({
@@ -42,6 +42,13 @@ export class FormProductoComponent implements OnInit {
 
     this.editar =false;
     this.database.getProductos();
+    this.unProducto = {
+      "id": 0,
+      "codigo": "",
+      "descripcion": "",
+      "precioUnitario": null
+    };
+  }
   }
 
   editarProducto(unProducto) {
