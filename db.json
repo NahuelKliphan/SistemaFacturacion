@@ -4,7 +4,7 @@
       "id": 1,
       "descripcion": "Pc",
       "precioUnitario": "20000",
-      "codigo": "HQ2R4"
+      "codigo": "yanohaycodigo"
     },
     {
       "id": 2,
@@ -15,20 +15,8 @@
   ],
   "Cliente": [
     {
-      "id": 2,
-      "nombre": "asasaasasaasasaaaas",
-      "direccion": "pan",
-      "cuit": "200"
-    },
-    {
-      "id": 3,
-      "nombre": "pepito el gasaasasasasasaaaasassssssaasa",
-      "direccion": "pan",
-      "cuit": "200"
-    },
-    {
       "id": 4,
-      "nombre": "paso algo aca che",
+      "nombre": "Ya no",
       "direccion": "pan",
       "cuit": "200"
     },
@@ -97,6 +85,24 @@
       "nombre": "Hola ke ase",
       "direccion": "pan",
       "cuit": "200"
+    },
+    {
+      "id": 16,
+      "nombre": "Ya no pasa nada",
+      "direccion": "pan",
+      "cuit": "85555555"
+    },
+    {
+      "id": 17,
+      "nombre": "paso algo aca che no nada",
+      "direccion": "pan",
+      "cuit": "200"
+    },
+    {
+      "id": 18,
+      "nombre": "owo esto funciona",
+      "direccion": "otakulandia",
+      "cuit": "666"
     }
   ]
 }

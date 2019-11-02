@@ -24,6 +24,6 @@ export class FormFacturaComponent implements OnInit {
   constructor(private database:ServiceService) { }
 
   ngOnInit() {
-
+    this.database.getClientes();
   }
 }

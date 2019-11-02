@@ -9,6 +9,7 @@ import { Cliente } from 'src/app/model/cliente';
 })
 export class FormClienteComponent implements OnInit {
 
+  editar: boolean = true;
   unCliente: Cliente = {
     "id": 0,
     "nombre": "",
@@ -22,23 +23,32 @@ export class FormClienteComponent implements OnInit {
   }
 
   addCliente() {
-    if (this.unCliente.id != 0){
-    this.database.agregarCliente(new Cliente(
-      this.unCliente.nombre,
-      this.unCliente.direccion,
-      this.unCliente.cuit));
-    this.database.getClientes();
-    } else {
-      this.database.actualizarCliente({
-        "id":this.unCliente.id,
-        "nombre":this.unCliente.nombre,
-        "direccion":this.unCliente.direccion,
-        "cuit":this.unCliente.cuit
-      });
-    }
+    if(this.unCliente.nombre != "" && this.unCliente.cuit != "" ){
+      if (!this.editar){
+      this.database.agregarCliente(new Cliente(
+        this.unCliente.nombre,
+        this.unCliente.direccion,
+        this.unCliente.cuit));
+      } else {
+        this.database.actualizarCliente({
+          "id":this.unCliente.id,
+          "nombre":this.unCliente.nombre,
+          "direccion":this.unCliente.direccion,
+          "cuit":this.unCliente.cuit
+        });
+      }
+      this.editar = false;
+      this.database.getClientes();
+      this.unCliente = {
+        "id":0,
+        "nombre": "",
+        "direccion":"",
+        "cuit": ""
+      }
   }
-
+}
   editarCliente(unCliente) {
+    this.editar = true;
     this.unCliente = unCliente;
     console.log(unCliente);
   }

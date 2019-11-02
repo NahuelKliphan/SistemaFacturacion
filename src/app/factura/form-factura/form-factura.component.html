@@ -14,13 +14,13 @@
             <input type="text" class="form-control" name="nroF1" [(ngModel)]="unaFactura.numero">
           </div>
         </div>
-
         <div class="row">
           <div class="col-6">
             <label for="cuit">Cliente</label>
             <select class="form-control" >
-              <option *ngFor = "let cliente of database.listadoClientes">{{cliente.nombre}}</option>
-              
+              <option *ngFor="let cliente of database.listadoClientes" [(ngModel)]="unaFactura.cliente">
+                {{cliente.nombre}}
+              </option>
             </select>
           </div>
           <div class="col-6">

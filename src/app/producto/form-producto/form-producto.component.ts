@@ -26,7 +26,6 @@ export class FormProductoComponent implements OnInit {
   addProducto() {
     if(this.unProducto.codigo != "" && this.unProducto.precioUnitario != null ){
     if(this.editar){
-
       this.database.actualizarProducto({
         "id": this.unProducto.id,
         "descripcion": this.unProducto.descripcion,
@@ -40,7 +39,7 @@ export class FormProductoComponent implements OnInit {
         this.unProducto.precioUnitario));
     }
 
-    this.editar =false;
+    this.editar = false;
     this.database.getProductos();
     this.unProducto = {
       "id": 0,

@@ -5,6 +5,8 @@ Clientes en el sistema: <br>
 </div>
 <ul class="list-group">
   <button class="list-group-item list-group-item-action" *ngFor="let unCliente of database.listadoClientes | buscar:busqueda"> 
-    Nombre: <b>{{ unCliente.nombre }}</b>, cuit: {{unCliente.cuit}}<button class="darespacio btn btn-dark" (click)="solicitarModificacion(unCliente)">Editar</button> <button class="btn btn-danger darespacio" (click)="eliminarCliente(unCliente.id)">Borrar</button>
+    Nombre: <b>{{ unCliente.nombre }}</b>, cuit: {{unCliente.cuit}}
+    <button class="darespacio btn btn-dark float-right" (click)="solicitarModificacion(unCliente)">Editar</button>
+    <button class="darespacio btn btn-danger float-right" (click)="eliminarCliente(unCliente.id)">Borrar</button>
   </button>
 </ul>
