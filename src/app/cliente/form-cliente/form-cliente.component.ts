@@ -9,6 +9,7 @@ import { Cliente } from 'src/app/model/cliente';
 })
 export class FormClienteComponent implements OnInit {
 
+  
   unCliente: Cliente = {
     "id": 0,
     "nombre": "",
@@ -61,5 +62,7 @@ export class FormClienteComponent implements OnInit {
     this.unCliente = unCliente;
     console.log(unCliente);
   }
-
 }
+  
+
+

@@ -4,7 +4,7 @@
       "id": 1,
       "descripcion": "Pc",
       "precioUnitario": "20000",
-      "codigo": "HQ2R4"
+      "codigo": "yanohaycodigo"
     },
     {
       "id": 2,
@@ -19,36 +19,5 @@
       "precioUnitario": "123"
     }
   ],
-  "Cliente": [
-    {
-      "id": 1,
-      "nombre": "123",
-      "direccion": "123",
-      "cuit": "123"
-    },
-    {
-      "id": 2,
-      "nombre": "123",
-      "direccion": "123",
-      "cuit": "123"
-    },
-    {
-      "id": 3,
-      "nombre": "123",
-      "direccion": "31213123",
-      "cuit": "123123"
-    },
-    {
-      "id": 4,
-      "nombre": "123213",
-      "direccion": "123123",
-      "cuit": "123123"
-    },
-    {
-      "id": 5,
-      "nombre": "123123",
-      "direccion": "3123",
-      "cuit": "123123"
-    }
-  ]
+  "Cliente": []
 }
