@@ -10,8 +10,9 @@
       <label for="cuit">Cuit</label>
       <input type="text" class="form-control" name="cuit" [(ngModel)]="unCliente.cuit">
       <br>
-      <button class="btn btn-outline-primary" (click)="addCliente()">Guardar</button>
+      <div class="text-center">
+        <button class="btn btn-outline-primary" (click)="addCliente()">Guardar</button>
+      </div>
     </div>
   </form>
 </div>
-debug : {{ unCliente | json}}

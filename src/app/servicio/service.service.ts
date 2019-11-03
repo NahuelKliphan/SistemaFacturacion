@@ -13,8 +13,6 @@ export class ServiceService {
 
   constructor(private _httpClient: HttpClient) { }
 
-
-
   //FUNCIONES PARA MANEJO DE PRODUCTOS
   getProductos() {
     this._httpClient.get<Producto[]>('http://localhost:3000/producto')
@@ -30,7 +28,7 @@ export class ServiceService {
   agregarProducto(nuevoProducto: Producto) {
     return this._httpClient.post('http://localhost:3000/producto', nuevoProducto).subscribe(data => {
         this.getProductos();
-     })
+     });
   }
 
   borrarProducto(productoId: string) {
@@ -46,10 +44,6 @@ export class ServiceService {
     );
   }
 
-
-
-
-
   //FUNCIONES PARA MANEJO DE CLIENTES
   getClientes() {
     this._httpClient.get<Cliente[]>('http://localhost:3000/cliente')
@@ -62,16 +56,22 @@ export class ServiceService {
   }
   agregarCliente(nuevoCliente: Cliente) {
     return this._httpClient.post('http://localhost:3000/Cliente', nuevoCliente)
-      .subscribe();
+      .subscribe(data => {
+          this.getClientes();
+      });
   }
   borrarCliente(clienteId: string) {
     return this._httpClient.delete(`http://localhost:3000/Cliente/${clienteId}`)
-    .subscribe();
+    .subscribe(
+      () => this.getClientes()
+    );
   }
 
   actualizarCliente(cliente: Cliente) {
     return this._httpClient.put(`http://localhost:3000/cliente/${cliente.id}`, cliente)
-    .subscribe();
+    .subscribe(
+      () => this.getClientes()
+    );
   }
 
 }

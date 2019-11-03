@@ -8,95 +8,47 @@
     },
     {
       "id": 2,
-      "codigo": "asds",
       "descripcion": "sad",
-      "precioUnitario": "ss"
+      "precioUnitario": "ss",
+      "codigo": "asds"
+    },
+    {
+      "id": 3,
+      "codigo": "123",
+      "descripcion": "123",
+      "precioUnitario": "123"
     }
   ],
   "Cliente": [
     {
+      "id": 1,
+      "nombre": "123",
+      "direccion": "123",
+      "cuit": "123"
+    },
+    {
       "id": 2,
-      "nombre": "asasaasasaasasaaaas",
-      "direccion": "pan",
-      "cuit": "200"
+      "nombre": "123",
+      "direccion": "123",
+      "cuit": "123"
     },
     {
       "id": 3,
-      "nombre": "pepito el gasaasasasasasaaaasassssssaasa",
-      "direccion": "pan",
-      "cuit": "200"
+      "nombre": "123",
+      "direccion": "31213123",
+      "cuit": "123123"
     },
     {
       "id": 4,
-      "nombre": "paso algo aca che",
-      "direccion": "pan",
-      "cuit": "200"
+      "nombre": "123213",
+      "direccion": "123123",
+      "cuit": "123123"
     },
     {
       "id": 5,
-      "nombre": "paso aalgo otra vez",
-      "direccion": "casa",
-      "cuit": "un cuit"
-    },
-    {
-      "id": 6,
-      "nombre": "un pan la",
-      "direccion": "pan",
-      "cuit": "200"
-    },
-    {
-      "id": 7,
-      "nombre": "un pan la",
-      "direccion": "pan",
-      "cuit": "250"
-    },
-    {
-      "id": 8,
-      "nombre": "un pan lac",
-      "direccion": "pan",
-      "cuit": "250"
-    },
-    {
-      "id": 9,
-      "nombre": "un pan la la",
-      "direccion": "pan",
-      "cuit": "200"
-    },
-    {
-      "id": 10,
-      "nombre": "un pan la asdasdasdasd",
-      "direccion": "pan",
-      "cuit": "200"
-    },
-    {
-      "id": 11,
-      "nombre": "un pan la asdasdasdasd",
-      "direccion": "pan",
-      "cuit": "200"
-    },
-    {
-      "id": 12,
-      "nombre": "Juan Pueblo",
-      "direccion": "pan",
-      "cuit": "200"
-    },
-    {
-      "id": 13,
-      "nombre": "Juan Pueblo",
-      "direccion": "pan",
-      "cuit": "200"
-    },
-    {
-      "id": 14,
-      "nombre": "Juan Pueblo",
-      "direccion": "pan",
-      "cuit": "200"
-    },
-    {
-      "id": 15,
-      "nombre": "Hola ke ase",
-      "direccion": "pan",
-      "cuit": "200"
+      "nombre": "123123",
+      "direccion": "3123",
+      "cuit": "123123"
     }
   ]
 }
