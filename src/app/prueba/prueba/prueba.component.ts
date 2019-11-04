@@ -26,7 +26,6 @@ export class PruebaComponent implements OnInit {
 
   items : Item[] = [this.unItem1,this.unItem2,this.unItem3];
 
-  unaFactura : Factura = new Factura('Factura C', new Date(),1,2,this.unCliente1,this.items);
 
   constructor(private _service: ServiceService) { }
 
@@ -39,8 +38,6 @@ export class PruebaComponent implements OnInit {
   }
 
   metodo(){
-
-    console.log(this.unaFactura);
 
   }
 

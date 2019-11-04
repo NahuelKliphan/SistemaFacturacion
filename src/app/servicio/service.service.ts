@@ -58,7 +58,7 @@ export class ServiceService {
       );
   }
   getClienteById(clienteId: number) {
-    return this._httpClient.get<Cliente>(`http://localhost:3000/cliente/${clienteId}`);
+    return this._httpClient.get<Cliente>(`http://localhost:3000/cliente/${clienteId}`).subscribe();
   }
   agregarCliente(nuevoCliente: Cliente) {
     return this._httpClient.post('http://localhost:3000/Cliente', nuevoCliente)

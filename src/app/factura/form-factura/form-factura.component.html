@@ -17,11 +17,16 @@
         <div class="row">
           <div class="col-6">
             <label for="cuit">Cliente</label>
-            <select class="form-control" >
-              <option *ngFor="let cliente of database.listadoClientes" [(ngModel)]="unaFactura.cliente">
-                {{cliente.nombre}}
+
+
+            <select class="form-control" name="unname" [(ngModel)]="cliente.id" (change)="cambiarCliente()">
+              <option [ngValue]="null" disabled>Elija un cliente</option>
+              <option *ngFor="let unCliente of database.listadoClientes" [ngValue]="unCliente.id" >
+                {{unCliente.nombre}}
               </option>
             </select>
+
+
           </div>
           <div class="col-6">
             <label for="cuit">Fecha</label>
@@ -85,4 +90,5 @@
     </div>
   </form>
 </div>
+debug: {{ clienteID | json}}
 debug : {{ unaFactura | json}}

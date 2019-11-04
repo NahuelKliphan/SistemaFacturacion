@@ -8,18 +8,18 @@ export class Factura {
     fecha: Date;
     numero: number;
     puntoVenta: number;
-    cliente: Cliente;
+    clienteID: string;
     total: number;
     items: Item[];
 
-    public constructor(tipo:string,fecha:Date,numero:number, puntoVenta:number ,cliente:Cliente,items:Item[]){
+    public constructor(tipo:string,fecha:Date,numero:number, puntoVenta:number ,clienteID:string,items:Item[]){
         this.id=0;
         this.total = 0;
         this.tipo = tipo;
         this.fecha = fecha;
         this.numero = numero;
         this.puntoVenta = puntoVenta;
-        this.cliente =cliente;
+        this.clienteID =clienteID;
         this.items =items;
 
         this.calcularTotal();
