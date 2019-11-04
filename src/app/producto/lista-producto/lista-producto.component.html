@@ -4,7 +4,6 @@ Productos del sistema: <br>
   <input type="text" class="form-control" placeholder="Codigo" [(ngModel)]="busqueda">
 </div>
 <ul class="list-group">
-
   <button class="list-group-item list-group-item-action "
     *ngFor="let unProducto of database.listadoProductos | buscar:busqueda">
     <b>Codigo:</b>  {{ unProducto.codigo }}  , <b>Precio:</b>  {{unProducto.precioUnitario}}

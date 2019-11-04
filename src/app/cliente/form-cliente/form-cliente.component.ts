@@ -9,27 +9,28 @@ import { Cliente } from 'src/app/model/cliente';
 })
 export class FormClienteComponent implements OnInit {
 
-  editar: boolean = true;
+  
   unCliente: Cliente = {
     "id": 0,
     "nombre": "",
     "cuit": "",
     "direccion": ""
   };
+
+
+  editar : boolean = false ;
+
+
   constructor(private database: ServiceService) { }
 
   ngOnInit() {
 
   }
-
   addCliente() {
-    if(this.unCliente.nombre != "" && this.unCliente.cuit != "" ){
-      if (!this.editar){
-      this.database.agregarCliente(new Cliente(
-        this.unCliente.nombre,
-        this.unCliente.direccion,
-        this.unCliente.cuit));
-      } else {
+    if (this.unCliente.cuit != '' && this.unCliente.nombre != '')
+    {
+      if(this.editar)
+      {
         this.database.actualizarCliente({
           "id":this.unCliente.id,
           "nombre":this.unCliente.nombre,
@@ -37,20 +38,31 @@ export class FormClienteComponent implements OnInit {
           "cuit":this.unCliente.cuit
         });
       }
+      else
+      {
+        this.database.agregarCliente(new Cliente(
+          this.unCliente.nombre,
+          this.unCliente.direccion,
+          this.unCliente.cuit));
+      }
+
       this.editar = false;
       this.database.getClientes();
       this.unCliente = {
         "id":0,
-        "nombre": "",
+        "nombre":"",
         "direccion":"",
-        "cuit": ""
-      }
+        "cuit":""
+      };
+    } 
   }
-}
+
   editarCliente(unCliente) {
     this.editar = true;
     this.unCliente = unCliente;
     console.log(unCliente);
   }
-
 }
+  
+
+

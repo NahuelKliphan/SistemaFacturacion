@@ -8,101 +8,16 @@
     },
     {
       "id": 2,
-      "codigo": "asds",
       "descripcion": "sad",
-      "precioUnitario": "ss"
+      "precioUnitario": "ss",
+      "codigo": "asds"
+    },
+    {
+      "id": 3,
+      "codigo": "123",
+      "descripcion": "123",
+      "precioUnitario": "123"
     }
   ],
-  "Cliente": [
-    {
-      "id": 4,
-      "nombre": "Ya no",
-      "direccion": "pan",
-      "cuit": "200"
-    },
-    {
-      "id": 5,
-      "nombre": "paso aalgo otra vez",
-      "direccion": "casa",
-      "cuit": "un cuit"
-    },
-    {
-      "id": 6,
-      "nombre": "un pan la",
-      "direccion": "pan",
-      "cuit": "200"
-    },
-    {
-      "id": 7,
-      "nombre": "un pan la",
-      "direccion": "pan",
-      "cuit": "250"
-    },
-    {
-      "id": 8,
-      "nombre": "un pan lac",
-      "direccion": "pan",
-      "cuit": "250"
-    },
-    {
-      "id": 9,
-      "nombre": "un pan la la",
-      "direccion": "pan",
-      "cuit": "200"
-    },
-    {
-      "id": 10,
-      "nombre": "un pan la asdasdasdasd",
-      "direccion": "pan",
-      "cuit": "200"
-    },
-    {
-      "id": 11,
-      "nombre": "un pan la asdasdasdasd",
-      "direccion": "pan",
-      "cuit": "200"
-    },
-    {
-      "id": 12,
-      "nombre": "Juan Pueblo",
-      "direccion": "pan",
-      "cuit": "200"
-    },
-    {
-      "id": 13,
-      "nombre": "Juan Pueblo",
-      "direccion": "pan",
-      "cuit": "200"
-    },
-    {
-      "id": 14,
-      "nombre": "Juan Pueblo",
-      "direccion": "pan",
-      "cuit": "200"
-    },
-    {
-      "id": 15,
-      "nombre": "Hola ke ase",
-      "direccion": "pan",
-      "cuit": "200"
-    },
-    {
-      "id": 16,
-      "nombre": "Ya no pasa nada",
-      "direccion": "pan",
-      "cuit": "85555555"
-    },
-    {
-      "id": 17,
-      "nombre": "paso algo aca che no nada",
-      "direccion": "pan",
-      "cuit": "200"
-    },
-    {
-      "id": 18,
-      "nombre": "owo esto funciona",
-      "direccion": "otakulandia",
-      "cuit": "666"
-    }
-  ]
+  "Cliente": []
 }
