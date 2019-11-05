@@ -1,3 +1,37 @@
-<p>
-  item works!
-</p>
+<ul class="list-group">
+  <button class="list-group-item list-group-item-action " *ngFor="let unItem of listaItems ">
+    <div class="col-12">
+      <div class="row">
+        <div class="col-1">
+          <input class="form-control" type="text" name="codigo" placeholder="Codigo" [(ngModel)]="unItem.codigo">
+        </div>
+        <div class="col-1">
+          <input class="form-control" type="text" name="cantidad" placeholder="Cantidad" [(ngModel)]="unItem.cantidad">
+        </div>
+        <div class="col-2">
+          <input class="form-control" type="text" name="descripcion" placeholder="Descripción"
+            [(ngModel)]="unItem.descripcion">
+        </div>
+        <div class="col-1">
+          <input class="form-control" type="text" name="precioUnitario" placeholder="Precio"
+            [(ngModel)]="unItem.precioUnitario">
+        </div>
+        <div class="col-1">
+          <input class="form-control" type="text" name="iva" placeholder="Iva" [(ngModel)]="unItem.iva">
+        </div>
+        <div class="col-1">
+          <input class="form-control" type="text" name="subtotal" placeholder="Subtotal" [(ngModel)]="unItem.subtotal">
+        </div>
+        <div>
+            <button class="btn btn-danger darespacio float-right" (click)="eliminarProducto(unProducto.id)">Borrar
+              </button>
+              <button class="darespacio btn btn-dark float-right" (click)="solicitarModificacion(unProducto)">Editar
+              </button>
+        </div>
+      </div>
+
+    </div>
+  </button>
+
+  {{unItem | json}}
+</ul>

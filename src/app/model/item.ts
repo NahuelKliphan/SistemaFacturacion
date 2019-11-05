@@ -19,14 +19,13 @@ export class Item {
         this.descripcion = descripcion;
         this.iva = iva;
         this.producto = producto;
-        this.subtotal =0;
-        this.precioUnitario = 0;
+        this.subtotal =null;
+        this.precioUnitario = null;
 
-        this.calcularTotal();
     }
 
     calcularSubtotal(){
-        return this.subtotal = this.cantidad * this.producto.precioUnitario;
+       return this.subtotal = this.cantidad * this.producto.precioUnitario;
     }
 
     calcularTotal(){

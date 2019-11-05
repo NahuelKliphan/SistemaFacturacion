@@ -26,15 +26,11 @@ export class PruebaComponent implements OnInit {
 
   items : Item[] = [this.unItem1,this.unItem2,this.unItem3];
 
-
   constructor(private _service: ServiceService) { }
-
 
   ngOnInit() 
   {
     
-  
-
   }
 
   metodo(){

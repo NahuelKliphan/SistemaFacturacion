@@ -20,7 +20,6 @@ export class FormClienteComponent implements OnInit {
 
   editar : boolean = false ;
 
-
   constructor(private database: ServiceService) { }
 
   ngOnInit() {

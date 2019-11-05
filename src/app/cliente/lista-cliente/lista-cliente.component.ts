@@ -20,8 +20,6 @@ export class ListaClienteComponent implements OnInit {
     this.database.getClientes();
   }
 
-
-  
   solicitarModificacion(unCliente:Cliente){
     console.log(" away");
     this.clienteAmodificar.emit(unCliente); //eto no anda que sad la wea

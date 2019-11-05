@@ -19,5 +19,12 @@
       "precioUnitario": "123"
     }
   ],
-  "Cliente": []
+  "Cliente": [
+    {
+      "id": 1,
+      "nombre": "213",
+      "direccion": "123",
+      "cuit": "123"
+    }
+  ]
 }
