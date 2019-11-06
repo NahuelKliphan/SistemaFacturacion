@@ -8,11 +8,11 @@ export class Factura {
     fecha: Date;
     numero: number;
     puntoVenta: number;
-    clienteID: string;
+    clienteID: Cliente;
     total: number;
     items: Item[];
 
-    public constructor(tipo:string,fecha:Date,numero:number, puntoVenta:number ,clienteID:string,items:Item[]){
+    public constructor(tipo:string,fecha:Date,numero:number, puntoVenta:number ,clienteID:Cliente,items:Item[]){
         this.id=0;
         this.total = 0;
         this.tipo = tipo;

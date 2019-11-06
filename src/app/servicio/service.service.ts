@@ -52,7 +52,7 @@ export class ServiceService {
       );
   }
   getClienteById(clienteId: number) {
-    return this._httpClient.get<Cliente>(`http://localhost:3000/cliente/${clienteId}`).subscribe();
+    return this._httpClient.get<Cliente>(`http://localhost:3000/cliente/${clienteId}`)
   }
   agregarCliente(nuevoCliente: Cliente) {
     return this._httpClient.post('http://localhost:3000/Cliente', nuevoCliente)
