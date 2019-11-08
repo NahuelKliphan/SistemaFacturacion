@@ -25,6 +25,13 @@
       "nombre": "213",
       "direccion": "123",
       "cuit": "123"
+    },
+    {
+      "id": 2,
+      "nombre": "Nahuel",
+      "direccion": "Aldea Brsailera",
+      "cuit": "254789652"
     }
-  ]
+  ],
+  "Factura": []
 }

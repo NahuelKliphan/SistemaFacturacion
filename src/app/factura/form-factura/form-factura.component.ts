@@ -15,8 +15,8 @@ export class FormFacturaComponent implements OnInit {
     "tipo": "A",
     "fecha": null,
     "numero": 9,
-    "puntoVenta": 0,
-    "clienteID": null,
+    "puntoVenta": "Paraná",
+    "cliente": null,
     "total": 0,
     "items": null,
     "calcularTotal" : null
@@ -38,7 +38,7 @@ export class FormFacturaComponent implements OnInit {
   cambiarCliente(){
     console.log(this.cliente.id);
     this.database.getClienteById(this.cliente.id).subscribe(
-      data => {  this.unaFactura.clienteID = data }
+      data => {  this.unaFactura.cliente = data }
     );;
   }
 }

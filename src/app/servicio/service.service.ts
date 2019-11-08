@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Producto } from 'src/app/model/producto';
 import { Cliente } from 'src/app/model/cliente';
+import { Factura } from 'src/app/model/factura';
 
 @Injectable({
   providedIn: 'root'
@@ -10,6 +11,7 @@ export class ServiceService {
 
   listadoProductos: Producto[] = [];
   listadoClientes: Cliente[] = [];
+  listadoFacturas: Factura[] = [];
 
   constructor(private _httpClient: HttpClient) { }
 
@@ -73,5 +75,31 @@ export class ServiceService {
       () => this.getClientes()
     );
   }
+
+  //FUNCIONES PARA MANEJO DE FACTURAS
+
+  getFacturas() {
+    this._httpClient.get<Factura[]>('http://localhost:3000/factura')
+      .subscribe(
+        (data) => this.listadoFacturas = data
+      );
+  }
+  getFacturaById(facturaId: number) {
+    return this._httpClient.get<Factura>(`http://localhost:3000/factura/${facturaId}`)
+  }
+  agregarFactura(nuevaFactura: Factura) {
+    return this._httpClient.post('http://localhost:3000/factura', nuevaFactura)
+      .subscribe(data => {
+          this.getFacturas();
+      });
+  }
+  borrarFactura(facturaId: string) {
+    return this._httpClient.delete(`http://localhost:3000/factura/${facturaId}`)
+    .subscribe(
+      () => this.getFacturas()
+    );
+  }
+
+
 
 }

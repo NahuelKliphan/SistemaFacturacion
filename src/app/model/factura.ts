@@ -7,19 +7,19 @@ export class Factura {
     tipo: string;
     fecha: Date;
     numero: number;
-    puntoVenta: number;
-    clienteID: Cliente;
+    puntoVenta: string;
+    cliente: Cliente;
     total: number;
     items: Item[];
 
-    public constructor(tipo:string,fecha:Date,numero:number, puntoVenta:number ,clienteID:Cliente,items:Item[]){
+    public constructor(tipo:string,fecha:Date,numero:number, puntoVenta:string ,cliente:Cliente,items:Item[]){
         this.id=0;
         this.total = 0;
         this.tipo = tipo;
         this.fecha = fecha;
         this.numero = numero;
         this.puntoVenta = puntoVenta;
-        this.clienteID =clienteID;
+        this.cliente =cliente;
         this.items =items;
 
         this.calcularTotal();

@@ -1,4 +1,4 @@
-import { Component, EventEmitter,Output, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter,Output, OnInit } from '@angular/core';
 import { ServiceService } from 'src/app/servicio/service.service';
 import { Cliente } from 'src/app/model/cliente';
 
@@ -22,7 +22,7 @@ export class ListaClienteComponent implements OnInit {
 
   solicitarModificacion(unCliente:Cliente){
     console.log(" away");
-    this.clienteAmodificar.emit(unCliente); //eto no anda que sad la wea
+    this.clienteAmodificar.emit(unCliente); 
   }
 
 }

@@ -8,9 +8,17 @@ import { ServiceService } from 'src/app/servicio/service.service';
 })
 export class ListaFacturaComponent implements OnInit {
 
+  busqueda: string = "";
+
   constructor(private database:ServiceService) { }
 
   ngOnInit() {
+    this.database.getFacturas();
+  }
+  
+  eliminarFactura(id:string){
+    this.database.borrarFactura(id);
+    this.database.getFacturas();
   }
 
 }
