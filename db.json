@@ -33,5 +33,33 @@
       "cuit": "254789652"
     }
   ],
-  "Factura": []
+  "Factura": [
+    {
+      "id":1,
+      "tipo":"C",
+      "fecha":"08/11/2019",
+      "numero":2,
+      "puntoVenta":"Paraná",
+      "clienteID":1,
+      "total":123.2,
+      "items":[
+        {
+          "id":1,
+          "cantidad":2,
+          "codigo":"asds",
+          "descripcion":"Pc",
+          "precioUnitario":10,
+          "iva":21,
+          "subtotal":120,
+          "producto":{
+            "id": 1,
+            "descripcion": "Pc",
+            "precioUnitario": "20000",
+            "codigo": "yanohaycodigo"
+          }
+        }
+      ]
+
+    }
+  ]
 }

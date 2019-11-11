@@ -17,7 +17,6 @@ export class FormClienteComponent implements OnInit {
     "direccion": ""
   };
 
-
   editar : boolean = false ;
 
   constructor(private database: ServiceService) { }

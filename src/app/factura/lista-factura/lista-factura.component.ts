@@ -10,10 +10,10 @@ export class ListaFacturaComponent implements OnInit {
 
   busqueda: string = "";
 
-  constructor(private database:ServiceService) { }
+  constructor(private database:ServiceService) { this.database.getFacturas(); }
 
   ngOnInit() {
-    this.database.getFacturas();
+    
   }
   
   eliminarFactura(id:string){
