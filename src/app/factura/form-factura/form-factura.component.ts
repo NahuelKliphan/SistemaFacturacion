@@ -18,7 +18,12 @@ export class FormFacturaComponent implements OnInit {
     "fecha": null,
     "numero": 9,
     "puntoVenta": "Paraná",
-    "cliente": null,
+    "cliente": {
+      "id": 0,
+      "nombre": "",
+      "cuit": "",
+      "direccion": ""
+    },
     "total": 0,
     "items": null,
     "calcularTotal": null
@@ -75,20 +80,20 @@ export class FormFacturaComponent implements OnInit {
       this.unItem.iva = 21;
       this.unItem = new Item(this.idItem,this.unItem.cantidad,this.producto.codigo, this.producto.descripcion, this.unItem.iva, this.producto);
       this.unItem.precioUnitario = this.unItem.calcularTotal();
-      this.listoAdd = true;
-    } 
+    }
+    this.listoAdd = true; 
   }
 
   addItem(){
     if(this.listoAdd)
     {
       this.items.push(new Item(this.unItem.id,this.unItem.cantidad,this.unItem.codigo,this.unItem.descripcion,this.unItem.iva,this.unItem.producto));
-      this.unaFactura.total = this.unaFactura.total + this.unItem.precioUnitario;
+      this.unaFactura.total = +this.unaFactura.total + +this.unItem.precioUnitario;
       console.log(this.unItem.id);
       this.idItem++;
       this.cambio();
-
     }
+    console.log("");
   }
 
   eliminarItem(id: string){

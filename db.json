@@ -4,7 +4,7 @@
       "id": 1,
       "descripcion": "Pc",
       "precioUnitario": "20000",
-      "codigo": "yanohaycodigo"
+      "codigo": "si hay"
     },
     {
       "id": 2,
@@ -31,6 +31,12 @@
       "nombre": "Nahuel",
       "direccion": "Aldea Brsailera",
       "cuit": "254789652"
+    },
+    {
+      "id": 3,
+      "nombre": "Nanowo",
+      "direccion": "su casa",
+      "cuit": "154654"
     }
   ],
   "Factura": [
@@ -118,6 +124,61 @@
           "precioUnitario": 148.82999999999998
         }
       ]
+    },
+    {
+      "id": 4,
+      "total": 0,
+      "tipo": "A",
+      "fecha": null,
+      "numero": 9,
+      "puntoVenta": "Paraná",
+      "cliente": {
+        "id": 3,
+        "nombre": "Nanowo",
+        "direccion": "su casa",
+        "cuit": "154654"
+      },
+      "items": []
+    },
+    {
+      "id": 5,
+      "total": 0,
+      "tipo": "A",
+      "fecha": null,
+      "numero": 0,
+      "puntoVenta": "",
+      "cliente": null,
+      "items": []
+    },
+    {
+      "id": 6,
+      "total": 0,
+      "tipo": "A",
+      "fecha": null,
+      "numero": 0,
+      "puntoVenta": "",
+      "cliente": null,
+      "items": []
+    },
+    {
+      "id": 7,
+      "total": 0,
+      "tipo": "A",
+      "fecha": null,
+      "numero": 0,
+      "puntoVenta": "",
+      "cliente": null,
+      "items": []
+    },
+    {
+      "id": 8,
+      "total": 0,
+      "tipo": "A",
+      "fecha": null,
+      "numero": 0,
+      "puntoVenta": "",
+      "cliente": null,
+      "items": []
     }
   ]
 }
