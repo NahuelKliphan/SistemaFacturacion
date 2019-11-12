@@ -2,9 +2,8 @@ import {Pipe, PipeTransform} from '@angular/core';
 
 @Pipe ({
     name:'buscar',
-
 })
-export class BuscarCliente implements PipeTransform{
+export class Buscar implements PipeTransform{
     public transform(value, args:string){
         if (!value){
             return;

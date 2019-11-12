@@ -29,12 +29,18 @@ export class FormFacturaComponent implements OnInit {
     "cuit": "",
     "direccion": ""
   };
+
+  producto: Producto = new Producto('','',null);
+  listoAdd : boolean = false;
   items: Item[] = [];
-  unItem : Item = new Item(null,"","",null,null);
+  unItem : Item = new Item(null,null,"","",null,null);
+  idItem: number = 0;
   constructor(private database: ServiceService) {
     this.database.getClientes();
+    this.database.getProductos();
   }
   ngOnInit() {
+    
   }
   cambiarCliente() {
     console.log(this.cliente.id);
@@ -44,14 +50,14 @@ export class FormFacturaComponent implements OnInit {
   }
   addFactura() {
     if (this.unaFactura.tipo != '' && this.unaFactura.numero != null) {
-      this.database.agregarFactura(new Factura(this.unaFactura.tipo, this.unaFactura.fecha, this.unaFactura.numero, this.unaFactura.puntoVenta, this.unaFactura.cliente, this.unaFactura.items))
+      this.database.agregarFactura(new Factura(this.unaFactura.tipo, this.unaFactura.fecha, this.unaFactura.numero, this.unaFactura.puntoVenta, this.unaFactura.cliente, this.items))
       this.database.getClientes();
       this.unaFactura = {
         "id": 0,
         "tipo": "A",
         "fecha": null,
-        "numero": 9,
-        "puntoVenta": "Paraná",
+        "numero": 0,
+        "puntoVenta": "",
         "cliente": null,
         "total": 0,
         "items": null,
@@ -59,4 +65,35 @@ export class FormFacturaComponent implements OnInit {
       };
     }
   }
+
+  cambio(){
+    this.listoAdd = false;
+    this.producto = this.database.listadoProductos.find( p => p.codigo == this.unItem.codigo );
+    if(this.producto != null)
+    {
+      this.unItem.cantidad = 1;
+      this.unItem.iva = 21;
+      this.unItem = new Item(this.idItem,this.unItem.cantidad,this.producto.codigo, this.producto.descripcion, this.unItem.iva, this.producto);
+      this.unItem.precioUnitario = this.unItem.calcularTotal();
+      this.listoAdd = true;
+    } 
+  }
+
+  addItem(){
+    if(this.listoAdd)
+    {
+      this.items.push(new Item(this.unItem.id,this.unItem.cantidad,this.unItem.codigo,this.unItem.descripcion,this.unItem.iva,this.unItem.producto));
+      this.unaFactura.total = this.unaFactura.total + this.unItem.precioUnitario;
+      console.log(this.unItem.id);
+      this.idItem++;
+      this.cambio();
+
+    }
+  }
+
+  eliminarItem(id: string){
+    this.items.splice( parseInt(id),1);
+  }
+
+
 }

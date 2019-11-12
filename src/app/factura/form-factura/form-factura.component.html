@@ -53,31 +53,28 @@
             <th scope="col">Codigo</th>
             <th scope="col">Descripcion</th>
             <th scope="col">Cantidad</th>
-            <th scope="col">PU</th>
             <th scope="col">IVA</th>
             <th scope="col">Subtotal</th>
+            <th scope="col">PU</th>
           </tr>
         </thead>
         <tbody>
           <tr>
-            <td><input class="form-control" type="text" name="codigo" placeholder="Codigo" [(ngModel)]="unItem.codigo"></td>
+            <td><input class="form-control" type="text" name="codigo" placeholder="Codigo" (input)="cambio()" [(ngModel)]="unItem.codigo"></td>
             <td><input class="form-control" type="text" name="descripcion" placeholder="Descripción" [(ngModel)]="unItem.descripcion"></td>
-            <td><input class="form-control" type="text" name="cantidad" placeholder="Cantidad" [(ngModel)]="unItem.cantidad"></td>
-            <td><input class="form-control" type="text" name="precioUnitario" placeholder="Precio" [(ngModel)]="unItem.precioUnitario"></td>
-            <td><input class="form-control" type="text" name="iva" placeholder="Iva" [(ngModel)]="unItem.iva"></td>
+            <td><input class="form-control" type="text" name="cantidad" placeholder="Cantidad" (input)="cambio()" [(ngModel)]="unItem.cantidad"></td>
+            <td><input class="form-control" type="text" name="iva" placeholder="Iva" (input)="cambio()" [(ngModel)]="unItem.iva"></td>
             <td><input class="form-control" type="text" name="subtotal" placeholder="Subtotal" [(ngModel)]="unItem.subtotal"></td>
+            <td><input class="form-control" type="text" name="precioUnitario" placeholder="Precio" [(ngModel)]="unItem.precioUnitario"></td>
           </tr>
         </tbody>
-
-        
-
 
       </table>
 
       <ul class="list-group">
         <button class="list-group-item list-group-item-action"
           *ngFor="let item of items">
-          <b>Codigo:</b> {{ item.codigo }}
+          <b>Codigo:</b>{{ item.codigo}}, <b>Descripción:</b>{{unItem.descripcion}}, <b>Cantidad:</b>{{unItem.cantidad}}, <b>Iva:</b>{{unItem.iva}}, <b>Subtotal:</b>{{unItem.subtotal}}, <b>PU:</b>{{unItem.precioUnitario}}
           <button class="btn btn-danger darespacio float-right"
           (click)="eliminarItem(item.id)">Borrar
         </button>
@@ -90,9 +87,9 @@
     </div>
     <div class="text-center">
       <button class="btn btn-outline-primary" (click)="addFactura()">Guardar</button>
-      <button class="btn btn-outline-primary" >add(poner en mejor lugar)</button>
+      <button class="btn btn-outline-primary" (click)="addItem()" >add(poner en mejor lugar)</button>
     </div>
   </form>
+
+  debug: {{unItem | json}}
 </div>
-debug: {{ clienteID | json}}
-debug : {{ unaFactura | json}}

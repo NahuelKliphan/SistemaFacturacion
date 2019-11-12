@@ -11,9 +11,9 @@ export class Item {
     subtotal: number;
     producto: Producto;
 
-    public constructor(cantidad:number, codigo:string, descripcion:string, iva:number,producto:Producto){
+    public constructor(id:number, cantidad:number, codigo:string, descripcion:string, iva:number,producto:Producto){
 
-        this.id= 0;
+        this.id= id;
         this.cantidad = cantidad;
         this.codigo = codigo;
         this.descripcion = descripcion;

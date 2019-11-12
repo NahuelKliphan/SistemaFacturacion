@@ -6,7 +6,7 @@ Facturas en el sistema: <br>
 <ul class="list-group">
   <button class="list-group-item list-group-item-action"
     *ngFor="let unaFactura of database.listadoFacturas | buscar:busqueda">
-    <b>Tipo:</b> {{ unaFactura.tipo }} , <b> Fecha: </b> {{unaFactura.fecha}}, <b> Numero: </b> {{unaFactura.numero}}
+    <b>Tipo:</b> {{ unaFactura.tipo }} , <b> Fecha: </b> {{unaFactura.fecha}}, <b> Numero: </b> {{unaFactura.numero}} <b>Total: </b> {{unaFactura.total}}
     <button class="btn btn-danger darespacio float-right"
     (click)="eliminarFactura(unaFactura.id)">Borrar
   </button>

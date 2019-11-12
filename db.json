@@ -35,31 +35,89 @@
   ],
   "Factura": [
     {
-      "id":1,
-      "tipo":"C",
-      "fecha":"08/11/2019",
-      "numero":2,
-      "puntoVenta":"Paraná",
-      "clienteID":1,
-      "total":123.2,
-      "items":[
+      "id": 1,
+      "total": 148.82999999999998,
+      "tipo": "A",
+      "fecha": null,
+      "numero": 9,
+      "puntoVenta": "Paraná",
+      "cliente": [
         {
-          "id":1,
-          "cantidad":2,
-          "codigo":"asds",
-          "descripcion":"Pc",
-          "precioUnitario":10,
-          "iva":21,
-          "subtotal":120,
-          "producto":{
-            "id": 1,
-            "descripcion": "Pc",
-            "precioUnitario": "20000",
-            "codigo": "yanohaycodigo"
-          }
+          "id": 1,
+          "nombre": "213",
+          "direccion": "123",
+          "cuit": "123"
+        },
+        {
+          "id": 2,
+          "nombre": "Nahuel",
+          "direccion": "Aldea Brsailera",
+          "cuit": "254789652"
+        }
+      ],
+      "items": [
+        {
+          "id": 0,
+          "cantidad": 1,
+          "codigo": "123",
+          "descripcion": "123",
+          "iva": 21,
+          "producto": {
+            "id": 3,
+            "codigo": "123",
+            "descripcion": "123",
+            "precioUnitario": "123"
+          },
+          "subtotal": 123,
+          "precioUnitario": 148.82999999999998
         }
       ]
-
+    },
+    {
+      "id": 2,
+      "total": 0,
+      "tipo": "A",
+      "fecha": null,
+      "numero": 9,
+      "puntoVenta": "Paraná",
+      "cliente": {
+        "id": 2,
+        "nombre": "Nahuel",
+        "direccion": "Aldea Brsailera",
+        "cuit": "254789652"
+      },
+      "items": []
+    },
+    {
+      "id": 3,
+      "total": 148.82999999999998,
+      "tipo": "A",
+      "fecha": null,
+      "numero": 9,
+      "puntoVenta": "Paraná",
+      "cliente": {
+        "id": 2,
+        "nombre": "Nahuel",
+        "direccion": "Aldea Brsailera",
+        "cuit": "254789652"
+      },
+      "items": [
+        {
+          "id": 0,
+          "cantidad": 1,
+          "codigo": "123",
+          "descripcion": "123",
+          "iva": 21,
+          "producto": {
+            "id": 3,
+            "codigo": "123",
+            "descripcion": "123",
+            "precioUnitario": "123"
+          },
+          "subtotal": 123,
+          "precioUnitario": 148.82999999999998
+        }
+      ]
     }
   ]
 }

@@ -15,11 +15,10 @@ import { ItemComponent } from './item/item/item.component';
 import { ClienteComponent } from './cliente/cliente/cliente.component';
 import { ProductoComponent } from './producto/producto/producto.component';
 import { FacturaComponent } from './factura/factura/factura.component';
-
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { PruebaComponent } from './prueba/prueba/prueba.component';
-import { BuscarCliente } from './pipes/buscar';
+import { Buscar } from './pipes/buscar';
 
 
 const routes : Routes = [
@@ -59,7 +58,7 @@ const routes : Routes = [
     ProductoComponent,
     FacturaComponent,
     PruebaComponent,
-    BuscarCliente
+    Buscar
   ],
   imports: [
     BrowserModule,

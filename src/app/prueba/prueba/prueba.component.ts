@@ -20,11 +20,7 @@ export class PruebaComponent implements OnInit {
   unProducto2 : Producto = new Producto('codigo','Descripcion',200);
   unProducto3 : Producto = new Producto('codigo','Descripcion',150);
 
-  unItem1 : Item = new Item(1,'codigo','descripcion',21,this.unProducto1);
-  unItem2 : Item = new Item(1,'codigo','descripcion',21,this.unProducto2);
-  unItem3 : Item = new Item(1,'codigo','descripcion',21,this.unProducto3);
-
-  items : Item[] = [this.unItem1,this.unItem2,this.unItem3];
+ 
 
   constructor(private _service: ServiceService) { }
 
