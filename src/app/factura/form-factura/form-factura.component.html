@@ -2,8 +2,8 @@
   <form>
     <div class="form-group">
       <div class="col-12">
-        
-        <h3 style="padding-top: 2%; padding-bottom: 2%;" align = "center">-FACTURA-</h3>
+
+        <h3 style="padding-top: 2%; padding-bottom: 2%;" align="center">-FACTURA-</h3>
         <div class="row">
           <div class="col-3">
             <label for="nombre">Tipo</label>
@@ -13,14 +13,14 @@
             <label for="nombre">Numero</label>
             <input type="text" class="form-control" name="nroF1" [(ngModel)]="unaFactura.numero">
           </div>
-        </div> 
+        </div>
         <div class="row">
           <div class="col-6">
             <label for="cuit">Cliente</label>
             <select class="form-control" name="unname" [(ngModel)]="cliente.id" (change)="cambiarCliente()">
               <option [ngValue]="null" disabled>Elija un cliente</option>
-              <option *ngFor="let unCliente of database.listadoClientes" [ngValue]="unCliente.id" >
-                {{unCliente.nombre}} 
+              <option *ngFor="let unCliente of database.listadoClientes" [ngValue]="unCliente.id">
+                {{unCliente.nombre}}
               </option>
             </select>
           </div>
@@ -44,6 +44,18 @@
         <label for="cuit">Direccion</label>
         <input type="text" disabled class="form-control" name="direccionF" [(ngModel)]="unaFactura.cliente.direccion">
         <br>
+        <div class="row">
+
+          <div class="col-2">
+            <button class="btn btn-outline-primary" (click)="addItem()">Agregar Item</button>
+          </div>
+          <div class="">
+            <button class="btn btn-outline-primary" (click)="addFactura()">Guardar</button>
+          </div>
+
+        </div>
+
+        <p></p>
 
       </div>
 
@@ -60,36 +72,46 @@
         </thead>
         <tbody>
           <tr>
-            <td><input class="form-control" type="text" name="codigo" placeholder="Codigo" (input)="cambio()" [(ngModel)]="unItem.codigo"></td>
-            <td><input class="form-control" type="text" name="descripcion" placeholder="Descripción" [(ngModel)]="unItem.descripcion"></td>
-            <td><input class="form-control" type="text" name="cantidad" placeholder="Cantidad" (input)="cambio()" [(ngModel)]="unItem.cantidad"></td>
-            <td><input class="form-control" type="text" name="iva" placeholder="Iva" (input)="cambio()" [(ngModel)]="unItem.iva"></td>
-            <td><input class="form-control" type="text" name="subtotal" placeholder="Subtotal" [(ngModel)]="unItem.subtotal"></td>
-            <td><input class="form-control" type="text" name="precioUnitario" placeholder="Precio" [(ngModel)]="unItem.precioUnitario"></td>
+            <td><input class="form-control" type="text" name="codigo" placeholder="Codigo" (input)="cambio()"
+                [(ngModel)]="unItem.codigo"></td>
+            <td><input class="form-control" type="text" name="descripcion" placeholder="Descripción"
+                [(ngModel)]="unItem.descripcion"></td>
+            <td><input class="form-control" type="text" name="cantidad" placeholder="Cantidad" (input)="cambio()"
+                [(ngModel)]="unItem.cantidad"></td>
+            <td><input class="form-control" type="text" name="iva" placeholder="Iva" (input)="cambio()"
+                [(ngModel)]="unItem.iva"></td>
+            <td><input class="form-control" type="text" name="subtotal" placeholder="Subtotal"
+                [(ngModel)]="unItem.subtotal"></td>
+            <td><input class="form-control" type="text" name="precioUnitario" placeholder="Precio"
+                [(ngModel)]="unItem.precioUnitario"></td>
           </tr>
         </tbody>
 
       </table>
 
       <ul class="list-group">
-        <button class="list-group-item list-group-item-action"
-          *ngFor="let item of items">
-          <b>Codigo:</b>{{ item.codigo}}, <b>Descripción:</b>{{unItem.descripcion}}, <b>Cantidad:</b>{{unItem.cantidad}}, <b>Iva:</b>{{unItem.iva}}, <b>Subtotal:</b>{{unItem.subtotal}}, <b>PU:</b>{{unItem.precioUnitario}}
-          <button class="btn btn-danger darespacio float-right"
-          (click)="eliminarItem(item.id)">Borrar
-        </button>
+        <button class="list-group-item list-group-item-action" *ngFor="let item of items">
+          <b>Codigo:</b>{{ item.codigo}}, <b>Descripción:</b>{{unItem.descripcion}},
+          <b>Cantidad:</b>{{unItem.cantidad}}, <b>Iva:</b>{{unItem.iva}}, <b>Subtotal:</b>{{unItem.subtotal}},
+          <b>PU:</b>{{unItem.precioUnitario}}
+          <button class="btn btn-danger darespacio float-right" (click)="eliminarItem(item.id)">Borrar
+          </button>
         </button>
       </ul>
 
-      <label for="cuit">Total</label>
-      <input type="text" class="form-control" name="total" [(ngModel)]="unaFactura.total">
+      <div class="col-2">
+
+        <div class="float-left">
+          <label for="cuit">Total</label>
+          <input type="text" step="1" class="form-control" name="total" [(ngModel)]="unaFactura.total">
+          <p></p>
+        </div>
+
+      </div>
+
+
       <br>
     </div>
-    <div class="text-center">
-      <button class="btn btn-outline-primary" (click)="addFactura()">Guardar</button>
-      <button class="btn btn-outline-primary" (click)="addItem()" >add(poner en mejor lugar)</button>
-    </div>
-  </form>
 
-  debug: {{unItem | json}}
+  </form>
 </div>

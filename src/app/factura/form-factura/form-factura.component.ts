@@ -14,9 +14,9 @@ export class FormFacturaComponent implements OnInit {
 
   unaFactura: Factura = {
     "id": 0,
-    "tipo": "A",
+    "tipo": "",
     "fecha": null,
-    "numero": 9,
+    "numero": null,
     "puntoVenta": "Paraná",
     "cliente": {
       "id": 0,
@@ -92,12 +92,19 @@ export class FormFacturaComponent implements OnInit {
       console.log(this.unItem.id);
       this.idItem++;
       this.cambio();
+      this.actualizarTotal();
     }
     console.log("");
   }
 
   eliminarItem(id: string){
     this.items.splice( parseInt(id),1);
+    this.actualizarTotal()
+  }
+
+  actualizarTotal(){
+    this.unaFactura.total = 0;
+    this.items.forEach(x=> this.unaFactura.total = this.unaFactura.total +  x.calcularTotal())
   }
 
 

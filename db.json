@@ -42,28 +42,35 @@
   "Factura": [
     {
       "id": 1,
-      "total": 148.82999999999998,
-      "tipo": "A",
+      "total": 297.65999999999997,
+      "tipo": "1",
       "fecha": null,
-      "numero": 9,
+      "numero": "1",
       "puntoVenta": "Paraná",
-      "cliente": [
-        {
-          "id": 1,
-          "nombre": "213",
-          "direccion": "123",
-          "cuit": "123"
-        },
+      "cliente": {
+        "id": 2,
+        "nombre": "Nahuel",
+        "direccion": "Aldea Brsailera",
+        "cuit": "254789652"
+      },
+      "items": [
         {
           "id": 2,
-          "nombre": "Nahuel",
-          "direccion": "Aldea Brsailera",
-          "cuit": "254789652"
-        }
-      ],
-      "items": [
+          "cantidad": 1,
+          "codigo": "123",
+          "descripcion": "123",
+          "iva": 21,
+          "producto": {
+            "id": 3,
+            "codigo": "123",
+            "descripcion": "123",
+            "precioUnitario": "123"
+          },
+          "subtotal": 123,
+          "precioUnitario": 148.82999999999998
+        },
         {
-          "id": 0,
+          "id": 3,
           "cantidad": 1,
           "codigo": "123",
           "descripcion": "123",
@@ -78,107 +85,6 @@
           "precioUnitario": 148.82999999999998
         }
       ]
-    },
-    {
-      "id": 2,
-      "total": 0,
-      "tipo": "A",
-      "fecha": null,
-      "numero": 9,
-      "puntoVenta": "Paraná",
-      "cliente": {
-        "id": 2,
-        "nombre": "Nahuel",
-        "direccion": "Aldea Brsailera",
-        "cuit": "254789652"
-      },
-      "items": []
-    },
-    {
-      "id": 3,
-      "total": 148.82999999999998,
-      "tipo": "A",
-      "fecha": null,
-      "numero": 9,
-      "puntoVenta": "Paraná",
-      "cliente": {
-        "id": 2,
-        "nombre": "Nahuel",
-        "direccion": "Aldea Brsailera",
-        "cuit": "254789652"
-      },
-      "items": [
-        {
-          "id": 0,
-          "cantidad": 1,
-          "codigo": "123",
-          "descripcion": "123",
-          "iva": 21,
-          "producto": {
-            "id": 3,
-            "codigo": "123",
-            "descripcion": "123",
-            "precioUnitario": "123"
-          },
-          "subtotal": 123,
-          "precioUnitario": 148.82999999999998
-        }
-      ]
-    },
-    {
-      "id": 4,
-      "total": 0,
-      "tipo": "A",
-      "fecha": null,
-      "numero": 9,
-      "puntoVenta": "Paraná",
-      "cliente": {
-        "id": 3,
-        "nombre": "Nanowo",
-        "direccion": "su casa",
-        "cuit": "154654"
-      },
-      "items": []
-    },
-    {
-      "id": 5,
-      "total": 0,
-      "tipo": "A",
-      "fecha": null,
-      "numero": 0,
-      "puntoVenta": "",
-      "cliente": null,
-      "items": []
-    },
-    {
-      "id": 6,
-      "total": 0,
-      "tipo": "A",
-      "fecha": null,
-      "numero": 0,
-      "puntoVenta": "",
-      "cliente": null,
-      "items": []
-    },
-    {
-      "id": 7,
-      "total": 0,
-      "tipo": "A",
-      "fecha": null,
-      "numero": 0,
-      "puntoVenta": "",
-      "cliente": null,
-      "items": []
-    },
-    {
-      "id": 8,
-      "total": 0,
-      "tipo": "A",
-      "fecha": null,
-      "numero": 0,
-      "puntoVenta": "",
-      "cliente": null,
-      "items": []
     }
   ]
 }
