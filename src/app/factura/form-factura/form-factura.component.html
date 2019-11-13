@@ -90,9 +90,9 @@
 
       <ul class="list-group">
         <button class="list-group-item list-group-item-action" *ngFor="let item of items">
-          <b>Codigo:</b>{{ item.codigo}}, <b>Descripción:</b>{{unItem.descripcion}},
-          <b>Cantidad:</b>{{unItem.cantidad}}, <b>Iva:</b>{{unItem.iva}}, <b>Subtotal:</b>{{unItem.subtotal}},
-          <b>PU:</b>{{unItem.precioUnitario}}
+          <b>Codigo:</b>{{ item.codigo}}, <b>Descripción:</b>{{item.descripcion}},
+          <b>Cantidad:</b>{{item.cantidad}}, <b>Iva:</b>{{item.iva}}, <b>Subtotal:</b>{{item.subtotal}},
+          <b>PU:</b>{{item.precioUnitario}}
           <button class="btn btn-danger darespacio float-right" (click)="eliminarItem(item.id)">Borrar
           </button>
         </button>
