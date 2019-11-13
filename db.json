@@ -41,19 +41,50 @@
   ],
   "Factura": [
     {
-      "id": 1,
-      "total": 0,
+      "id": 2,
+      "total": 24490.4,
       "tipo": "a",
-      "fecha": null,
-      "numero": "a",
+      "fecha": "2019-11-12",
+      "numero": "1",
       "puntoVenta": "Paraná",
       "cliente": {
-        "id": 2,
-        "nombre": "Guille",
-        "direccion": "Paraná",
-        "cuit": "654646516516"
+        "id": 1,
+        "nombre": "Nahuel",
+        "direccion": "Aldea Brasilera",
+        "cuit": "4123121945"
       },
-      "items": []
+      "items": [
+        {
+          "id": 0,
+          "cantidad": "1",
+          "codigo": "PC",
+          "descripcion": "PC de escritorio",
+          "iva": "21",
+          "producto": {
+            "id": 1,
+            "codigo": "PC",
+            "descripcion": "PC de escritorio",
+            "precioUnitario": "20000"
+          },
+          "subtotal": 20000,
+          "precioUnitario": 24200
+        },
+        {
+          "id": 1,
+          "cantidad": "2",
+          "codigo": "Cable USB",
+          "descripcion": "Cable USB",
+          "iva": "21",
+          "producto": {
+            "id": 2,
+            "codigo": "Cable USB",
+            "descripcion": "Cable USB",
+            "precioUnitario": "120"
+          },
+          "subtotal": 240,
+          "precioUnitario": 290.4
+        }
+      ]
     }
   ]
 }

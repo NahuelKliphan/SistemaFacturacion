@@ -10,20 +10,20 @@ Facturas en el sistema: <br>
     <button class="btn btn-danger darespacio float-right"
     (click)="eliminarFactura(unaFactura.id)">Borrar
   </button>
-  <button class="btn btn-primary" (click)="mostrar(unaFactura)">
+  <button class="darespacio  btn btn-primary float-right" (click)="mostrar(unaFactura)">
     Ver
   </button>
   </button>
 </ul>
 
 
-
 <div class="row">
   <div class="col-12">
-    <div class="col-3">{{unaFactura.tipo}}</div>
-    <div class="col-3">{{ unaFactura.numer}}</div>
-    <div class="col-3">{{ unaFactura.puntoVenta}}</div>
-    <div class="col-3">{{ unaFactura.cliente.nombre}}</div>
+    <div class="col-3"><b>Tipo: </b> {{unaFactura.tipo}}</div>
+    <div class="col-3"><b>Numero: </b> {{ unaFactura.numero}}</div>
+    <div class="col-3"><b>Cliente: </b> {{ unaFactura.cliente.nombre}}</div>
+    <div class="col-3"><b>Total: </b> {{ unaFactura.total}}</div>
+    <div class="col-3"><b>Items: </b></div>
     <div *ngFor="let aItem of unaFactura.items" class="col-3">
       {{aItem.descripcion}}
     </div>
