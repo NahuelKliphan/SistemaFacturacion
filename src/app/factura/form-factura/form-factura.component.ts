@@ -76,8 +76,6 @@ export class FormFacturaComponent implements OnInit {
     this.producto = this.database.listadoProductos.find( p => p.codigo == this.unItem.codigo );
     if(this.producto != null)
     {
-      this.unItem.cantidad = 1;
-      this.unItem.iva = 21;
       this.unItem = new Item(this.idItem,this.unItem.cantidad,this.producto.codigo, this.producto.descripcion, this.unItem.iva, this.producto);
       this.unItem.precioUnitario = this.unItem.calcularTotal();
     }
@@ -91,7 +89,6 @@ export class FormFacturaComponent implements OnInit {
       this.unaFactura.total = +this.unaFactura.total + +this.unItem.precioUnitario;
       console.log(this.unItem.id);
       this.idItem++;
-      this.cambio();
       this.actualizarTotal();
     }
     console.log("");

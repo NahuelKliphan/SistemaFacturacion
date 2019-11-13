@@ -2,89 +2,42 @@
   "Producto": [
     {
       "id": 1,
-      "descripcion": "Pc",
-      "precioUnitario": "20000",
-      "codigo": "si hay"
+      "codigo": "PC",
+      "descripcion": "PC de escritorio",
+      "precioUnitario": "20000"
     },
     {
       "id": 2,
-      "descripcion": "sad",
-      "precioUnitario": "ss",
-      "codigo": "asds"
+      "codigo": "Cable USB",
+      "descripcion": "Cable USB",
+      "precioUnitario": "120"
     },
     {
       "id": 3,
-      "codigo": "123",
-      "descripcion": "123",
-      "precioUnitario": "123"
+      "codigo": "Laptop",
+      "descripcion": "Pc portatil",
+      "precioUnitario": "24999"
     }
   ],
   "Cliente": [
     {
       "id": 1,
-      "nombre": "213",
-      "direccion": "123",
-      "cuit": "123"
+      "nombre": "Nahuel",
+      "direccion": "Aldea Brasilera",
+      "cuit": "4123121945"
     },
     {
       "id": 2,
-      "nombre": "Nahuel",
-      "direccion": "Aldea Brsailera",
-      "cuit": "254789652"
+      "nombre": "Guille",
+      "direccion": "Paraná",
+      "cuit": "654646516516"
     },
     {
       "id": 3,
-      "nombre": "Nanowo",
-      "direccion": "su casa",
-      "cuit": "154654"
+      "nombre": "Juan",
+      "direccion": "Paraná",
+      "cuit": "848486748641"
     }
   ],
-  "Factura": [
-    {
-      "id": 1,
-      "total": 297.65999999999997,
-      "tipo": "1",
-      "fecha": null,
-      "numero": "1",
-      "puntoVenta": "Paraná",
-      "cliente": {
-        "id": 2,
-        "nombre": "Nahuel",
-        "direccion": "Aldea Brsailera",
-        "cuit": "254789652"
-      },
-      "items": [
-        {
-          "id": 2,
-          "cantidad": 1,
-          "codigo": "123",
-          "descripcion": "123",
-          "iva": 21,
-          "producto": {
-            "id": 3,
-            "codigo": "123",
-            "descripcion": "123",
-            "precioUnitario": "123"
-          },
-          "subtotal": 123,
-          "precioUnitario": 148.82999999999998
-        },
-        {
-          "id": 3,
-          "cantidad": 1,
-          "codigo": "123",
-          "descripcion": "123",
-          "iva": 21,
-          "producto": {
-            "id": 3,
-            "codigo": "123",
-            "descripcion": "123",
-            "precioUnitario": "123"
-          },
-          "subtotal": 123,
-          "precioUnitario": 148.82999999999998
-        }
-      ]
-    }
-  ]
+  "Factura": []
 }
