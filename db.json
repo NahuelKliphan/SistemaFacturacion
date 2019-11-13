@@ -39,5 +39,21 @@
       "cuit": "848486748641"
     }
   ],
-  "Factura": []
+  "Factura": [
+    {
+      "id": 1,
+      "total": 0,
+      "tipo": "a",
+      "fecha": null,
+      "numero": "a",
+      "puntoVenta": "Paraná",
+      "cliente": {
+        "id": 2,
+        "nombre": "Guille",
+        "direccion": "Paraná",
+        "cuit": "654646516516"
+      },
+      "items": []
+    }
+  ]
 }

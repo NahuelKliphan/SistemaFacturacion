@@ -35,7 +35,12 @@ export class FormFacturaComponent implements OnInit {
     "direccion": ""
   };
 
-  producto: Producto = new Producto('','',null);
+  producto: Producto = {
+    "descripcion":"",
+    "codigo":"",
+    "id":0,
+    "precioUnitario":0
+  }
   listoAdd : boolean = false;
   items: Item[] = [];
   unItem : Item = new Item(null,null,"","",null,null);
