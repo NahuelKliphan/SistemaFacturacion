@@ -10,7 +10,7 @@ import { ServiceService } from 'src/app/servicio/service.service';
 export class ListaProductoComponent implements OnInit {
 
   busqueda: string = "";
-  
+
   constructor(private database: ServiceService) { }
 
   @Output() productoAmodificar = new EventEmitter();

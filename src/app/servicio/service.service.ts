@@ -3,6 +3,7 @@ import { HttpClient } from '@angular/common/http';
 import { Producto } from 'src/app/model/producto';
 import { Cliente } from 'src/app/model/cliente';
 import { Factura } from 'src/app/model/factura';
+import { JsonPipe } from '@angular/common';
 
 @Injectable({
   providedIn: 'root'
@@ -13,34 +14,35 @@ export class ServiceService {
   listadoClientes: Cliente[] = [];
   listadoFacturas: Factura[] = [];
 
+
   constructor(private _httpClient: HttpClient) { }
 
   //FUNCIONES PARA MANEJO DE PRODUCTOS
   getProductos() {
-    this._httpClient.get<Producto[]>('http://localhost:3000/producto')
+    this._httpClient.get<Producto[]>('http://localhost:4000/api/productos/')
       .subscribe(
-        (data) => this.listadoProductos = data
+        (data) =>  this.listadoProductos =  data 
       );
   }
 
   getProductoById(productoId: number) {
-    return this._httpClient.get<Producto>(`http://localhost:3000/producto/${productoId}`)
+    return this._httpClient.get<Producto>(`http://localhost:4000/api/productos/${productoId}`)
   }
 
   agregarProducto(nuevoProducto: Producto) {
-    return this._httpClient.post('http://localhost:3000/producto', nuevoProducto).subscribe(data => {
+    return this._httpClient.post('http://localhost:4000/api/productos/', nuevoProducto).subscribe(data => {
         this.getProductos();
      });
   }
 
   borrarProducto(productoId: string) {
-    return this._httpClient.delete(`http://localhost:3000/producto/${productoId}`).subscribe(
+    return this._httpClient.delete(`http://localhost:4000/api/productos/${productoId}`).subscribe(
       () => this.getProductos()
     );
   }
 
   actualizarProducto(producto: Producto) {
-    return this._httpClient.put(`http://localhost:3000/producto/${producto.id}`, producto)
+    return this._httpClient.put(`http://localhost:4000/api/productos/${producto.id}`, producto)
     .subscribe(
       () => this.getProductos()
     );
@@ -48,29 +50,29 @@ export class ServiceService {
 
   //FUNCIONES PARA MANEJO DE CLIENTES
   getClientes() {
-    this._httpClient.get<Cliente[]>('http://localhost:3000/cliente')
+    this._httpClient.get<Cliente[]>('http://localhost:4000/api/clientes/')
       .subscribe(
         (data) => this.listadoClientes = data
       );
   }
   getClienteById(clienteId: number) {
-    return this._httpClient.get<Cliente>(`http://localhost:3000/cliente/${clienteId}`)
+    return this._httpClient.get<Cliente>(`http://localhost:4000/api/clientes/${clienteId}`)
   }
   agregarCliente(nuevoCliente: Cliente) {
-    return this._httpClient.post('http://localhost:3000/Cliente', nuevoCliente)
+    return this._httpClient.post('http://localhost:4000/api/clientes/', nuevoCliente)
       .subscribe(data => {
           this.getClientes();
       });
   }
   borrarCliente(clienteId: string) {
-    return this._httpClient.delete(`http://localhost:3000/Cliente/${clienteId}`)
+    return this._httpClient.delete(`http://localhost:4000/api/clientes/${clienteId}`)
     .subscribe(
       () => this.getClientes()
     );
   }
 
   actualizarCliente(cliente: Cliente) {
-    return this._httpClient.put(`http://localhost:3000/cliente/${cliente.id}`, cliente)
+    return this._httpClient.put(`http://localhost:4000/api/clientes/${cliente.id}`, cliente)
     .subscribe(
       () => this.getClientes()
     );
