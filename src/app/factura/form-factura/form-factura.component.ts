@@ -18,12 +18,7 @@ export class FormFacturaComponent implements OnInit {
     "fecha": null,
     "numero": null,
     "puntoVenta": "Paraná",
-    "cliente": {
-      "id": 0,
-      "nombre": "",
-      "cuit": "",
-      "direccion": ""
-    },
+    "cliente": null,
     "total": 0,
     "items": null,
     "calcularTotal": null
@@ -43,7 +38,7 @@ export class FormFacturaComponent implements OnInit {
   }
   listoAdd : boolean = false;
   items: Item[] = [];
-  unItem : Item = new Item(null,null,"","",null,null);
+  unItem : Item = new Item(null,null,"","",null,null,0);
   idItem: number = 0;
   constructor(private database: ServiceService) {
     this.database.getClientes();
@@ -55,12 +50,15 @@ export class FormFacturaComponent implements OnInit {
   cambiarCliente() {
     console.log(this.cliente.id);
     this.database.getClienteById(this.cliente.id).subscribe(
-      data => { this.unaFactura.cliente = data }
-    );;
+      data => { this.cliente = data }
+    );
   }
   addFactura() {
     if (this.unaFactura.tipo != '' && this.unaFactura.numero != null) {
-      this.database.agregarFactura(new Factura(this.unaFactura.tipo, this.unaFactura.fecha, this.unaFactura.numero, this.unaFactura.puntoVenta, this.unaFactura.cliente, this.items))
+      this.database.agregarFactura(new Factura(this.unaFactura.tipo, this.unaFactura.fecha, this.unaFactura.numero, this.unaFactura.puntoVenta, this.cliente))
+      //agregar items por separado
+      this.database.agregarItems(this.items);
+      //
       this.database.getClientes();
       this.unaFactura = {
         "id": 0,
@@ -81,7 +79,7 @@ export class FormFacturaComponent implements OnInit {
     this.producto = this.database.listadoProductos.find( p => p.codigo == this.unItem.codigo );
     if(this.producto != null)
     {
-      this.unItem = new Item(this.idItem,this.unItem.cantidad,this.producto.codigo, this.producto.descripcion, this.unItem.iva, this.producto);
+      this.unItem = new Item(this.idItem,this.unItem.cantidad,this.producto.codigo, this.producto.descripcion, this.unItem.iva, this.producto,1); //Este uno (1) esta para rellenar, apunta a el idfactura numero 1
       this.unItem.precioUnitario = this.unItem.calcularTotal();
     }
     this.listoAdd = true; 
@@ -90,24 +88,24 @@ export class FormFacturaComponent implements OnInit {
   addItem(){
     if(this.listoAdd)
     {
-      this.items.push(new Item(this.unItem.id,this.unItem.cantidad,this.unItem.codigo,this.unItem.descripcion,this.unItem.iva,this.unItem.producto));
+
+      this.items.push(new Item(this.unItem.id,this.unItem.cantidad,this.unItem.codigo,this.unItem.descripcion,this.unItem.iva,this.unItem.producto,1));
       this.unaFactura.total = +this.unaFactura.total + +this.unItem.precioUnitario;
       console.log(this.unItem.id);
       this.idItem++;
-      this.actualizarTotal();
     }
     console.log("");
   }
 
-  eliminarItem(id: string){
-    this.items.splice( parseInt(id),1);
-    this.actualizarTotal()
-  }
-
-  actualizarTotal(){
-    this.unaFactura.total = 0;
-    this.items.forEach(x=> this.unaFactura.total = this.unaFactura.total +  x.calcularTotal())
-  }
-
-
+  //eliminarItem(id: string){
+  //  this.items.splice( parseInt(id),1);
+  //  this.actualizarTotal()
+  //}
+//
+  //actualizarTotal(){
+  //  this.unaFactura.total = 0;
+  //  this.items.forEach(x=> this.unaFactura.total = this.unaFactura.total +  x.calcularTotal())
+  //}
+//
+//
 }

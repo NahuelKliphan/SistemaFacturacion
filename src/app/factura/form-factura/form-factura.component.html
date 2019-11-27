@@ -32,17 +32,17 @@
         <div class="row">
           <div class="col-6">
             <label for="direccion">Nombre</label>
-            <input type="text" disabled class="form-control" name="nombreF" [(ngModel)]="unaFactura.cliente.nombre">
+            <input type="text" disabled class="form-control" name="nombreF" [(ngModel)]="cliente.nombre">
           </div>
 
           <div class="col-6">
             <label for="cuit">Cuit</label>
-            <input type="text" disabled class="form-control" name="cuitF" [(ngModel)]="unaFactura.cliente.cuit">
+            <input type="text" disabled class="form-control" name="cuitF" [(ngModel)]="cliente.cuit">
           </div>
         </div>
 
         <label for="cuit">Direccion</label>
-        <input type="text" disabled class="form-control" name="direccionF" [(ngModel)]="unaFactura.cliente.direccion">
+        <input type="text" disabled class="form-control" name="direccionF" [(ngModel)]="cliente.direccion">
         <br>
         <div class="row">
 
@@ -53,9 +53,7 @@
             <button class="btn btn-outline-primary" (click)="addFactura()">Guardar</button>
           </div>
         </div>
-
         <p></p>
-
       </div>
 
       <table class="table table-striped">

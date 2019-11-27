@@ -16,12 +16,7 @@ export class ListaFacturaComponent implements OnInit {
     "fecha": null,
     "numero": null,
     "puntoVenta": "Paraná",
-    "cliente": {
-      "id": 0,
-      "nombre": "",
-      "cuit": "",
-      "direccion": ""
-    },
+    "cliente":null,
     "total": 0,
     "items": null,
     "calcularTotal": null

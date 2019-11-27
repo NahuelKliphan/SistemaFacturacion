@@ -10,8 +10,8 @@ export class Item {
     iva: number;
     subtotal: number;
     producto: Producto;
-
-    public constructor(id:number, cantidad:number, codigo:string, descripcion:string, iva:number,producto:Producto){
+    facturaId: number;
+    public constructor(id:number, cantidad:number, codigo:string, descripcion:string, iva:number,producto:Producto,facturaId:number){
 
         this.id= id;
         this.cantidad = cantidad;
@@ -21,7 +21,7 @@ export class Item {
         this.producto = producto;
         this.subtotal =null;
         this.precioUnitario = null;
-
+this.facturaId=facturaId;
     }
 
     calcularSubtotal(){

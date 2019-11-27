@@ -4,6 +4,7 @@ import { Producto } from 'src/app/model/producto';
 import { Cliente } from 'src/app/model/cliente';
 import { Factura } from 'src/app/model/factura';
 import { JsonPipe } from '@angular/common';
+import { Item } from '../model/item';
 
 @Injectable({
   providedIn: 'root'
@@ -16,6 +17,12 @@ export class ServiceService {
 
 
   constructor(private _httpClient: HttpClient) { }
+
+
+
+
+
+
 
   //FUNCIONES PARA MANEJO DE PRODUCTOS
   getProductos() {
@@ -48,6 +55,11 @@ export class ServiceService {
     );
   }
 
+
+
+
+
+
   //FUNCIONES PARA MANEJO DE CLIENTES
   getClientes() {
     this._httpClient.get<Cliente[]>('http://localhost:4000/api/clientes/')
@@ -78,30 +90,39 @@ export class ServiceService {
     );
   }
 
+
+
+
+
+
   //FUNCIONES PARA MANEJO DE FACTURAS
 
   getFacturas() {
-    this._httpClient.get<Factura[]>('http://localhost:3000/factura')
+    this._httpClient.get<Factura[]>('http://localhost:4000/api/facturas')
       .subscribe(
         (data) => this.listadoFacturas = data
       );
   }
   getFacturaById(facturaId: number) {
-    return this._httpClient.get<Factura>(`http://localhost:3000/factura/${facturaId}`)
+    return this._httpClient.get<Factura>(`http://localhost:4000/api/facturas/${facturaId}`)
   }
   agregarFactura(nuevaFactura: Factura) {
-    return this._httpClient.post('http://localhost:3000/factura', nuevaFactura)
+    return this._httpClient.post('http://localhost:4000/api/facturas/', nuevaFactura)
       .subscribe(data => {
-          this.getFacturas();
+          //this.getFacturas();
       });
   }
   borrarFactura(facturaId: string) {
-    return this._httpClient.delete(`http://localhost:3000/factura/${facturaId}`)
+    return this._httpClient.delete(`http://localhost:4000/api/facturas/${facturaId}`)
     .subscribe(
       () => this.getFacturas()
     );
   }
-
-
-
+  agregarItems(items: Item[]){
+    items.forEach(aItem => {
+      this._httpClient.post(`http://localhost:4000/api/facturas/`,aItem).subscribe(
+        () => {}
+      )
+    });
+  }
 }
