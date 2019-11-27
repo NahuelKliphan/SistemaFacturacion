@@ -19,11 +19,6 @@ export class ServiceService {
   constructor(private _httpClient: HttpClient) { }
 
 
-
-
-
-
-
   //FUNCIONES PARA MANEJO DE PRODUCTOS
   getProductos() {
     this._httpClient.get<Producto[]>('http://localhost:4000/api/productos/')
@@ -56,10 +51,6 @@ export class ServiceService {
   }
 
 
-
-
-
-
   //FUNCIONES PARA MANEJO DE CLIENTES
   getClientes() {
     this._httpClient.get<Cliente[]>('http://localhost:4000/api/clientes/')
@@ -90,11 +81,6 @@ export class ServiceService {
     );
   }
 
-
-
-
-
-
   //FUNCIONES PARA MANEJO DE FACTURAS
 
   getFacturas() {
@@ -109,7 +95,7 @@ export class ServiceService {
   agregarFactura(nuevaFactura: Factura) {
     return this._httpClient.post('http://localhost:4000/api/facturas/', nuevaFactura)
       .subscribe(data => {
-          //this.getFacturas();
+          this.getFacturas();
       });
   }
   borrarFactura(facturaId: string) {
