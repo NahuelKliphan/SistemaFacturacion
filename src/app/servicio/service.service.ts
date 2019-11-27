@@ -106,8 +106,11 @@ export class ServiceService {
   }
   agregarItems(items: Item[]){
     items.forEach(aItem => {
-      this._httpClient.post(`http://localhost:4000/api/facturas/`,aItem).subscribe(
-        () => {}
+      this._httpClient.post(`http://localhost:4000/api/items/`,aItem).subscribe(
+        (data) => {
+          console.log("Salio"+aItem);
+          console.log(data);
+        }
       )
     });
   }
