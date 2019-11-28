@@ -21,7 +21,7 @@ export class Item {
         this.producto = producto;
         this.subtotal =null;
         this.precioUnitario = null;
-this.facturaId=facturaId;
+        this.facturaId=facturaId;
     }
 
     calcularSubtotal(){

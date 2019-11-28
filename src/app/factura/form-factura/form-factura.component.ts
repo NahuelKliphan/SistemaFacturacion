@@ -89,7 +89,11 @@ export class FormFacturaComponent implements OnInit {
     if(this.listoAdd)
     {
 
-      this.items.push(new Item(this.unItem.id,this.unItem.cantidad,this.unItem.codigo,this.unItem.descripcion,this.unItem.iva,this.unItem.producto,1));
+      let item: Item = new Item(this.unItem.id,this.unItem.cantidad,this.unItem.codigo,this.unItem.descripcion,this.unItem.iva,this.unItem.producto,1);
+      item.precioUnitario = item.cantidad * item.producto.precioUnitario;
+      item.subtotal = item.precioUnitario + (item.precioUnitario * item.iva)/100;
+
+      this.items.push(item);
       this.unaFactura.total = +this.unaFactura.total + +this.unItem.precioUnitario;
       console.log(this.unItem.id);
       this.idItem++;
@@ -97,15 +101,16 @@ export class FormFacturaComponent implements OnInit {
     console.log("");
   }
 
-  //eliminarItem(id: string){
-  //  this.items.splice( parseInt(id),1);
-  //  this.actualizarTotal()
-  //}
-//
-  //actualizarTotal(){
-  //  this.unaFactura.total = 0;
-  //  this.items.forEach(x=> this.unaFactura.total = this.unaFactura.total +  x.calcularTotal())
-  //}
-//
-//
+
+  eliminarItem(id: string){
+    this.items.splice( parseInt(id),1);
+    this.actualizarTotal()
+  }
+
+  actualizarTotal(){
+    this.unaFactura.total = 0;
+    this.items.forEach(x=> this.unaFactura.total = this.unaFactura.total +  x.calcularTotal())
+  }
+
+
 }
