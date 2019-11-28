@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { ServiceService } from 'src/app/servicio/service.service';
 import { Factura } from 'src/app/model/factura';
+import { Item } from 'src/app/model/item';
+import { async } from 'q';
 
 @Component({
   selector: 'app-lista-factura',
@@ -16,20 +18,25 @@ export class ListaFacturaComponent implements OnInit {
     "fecha": null,
     "numero": null,
     "puntoVenta": "Paraná",
-    "cliente":null,
+    "cliente": null,
     "total": 0,
     "items": null,
     "calcularTotal": null
   };
-  constructor(private database:ServiceService) { this.database.getFacturas(); }
+  constructor(private database: ServiceService) {
+    this.database.getFacturas();
+  }
 
   ngOnInit() {
-    
+
   }
-  mostrar(unaFactura){
-    this.unaFactura=unaFactura;
+  mostrar(unaFactura) {
+    this.unaFactura = unaFactura;
+    this.database.getItems(unaFactura.id);
+    this.unaFactura.items = this.database.listadoItems;
+
   }
-  eliminarFactura(id:string){
+  eliminarFactura(id: string) {
     this.database.borrarFactura(id);
     this.database.getFacturas();
   }

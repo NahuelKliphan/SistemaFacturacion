@@ -55,7 +55,9 @@ export class FormFacturaComponent implements OnInit {
   }
   addFactura() {
     if (this.unaFactura.tipo != '' && this.unaFactura.numero != null) {
-      this.database.agregarFactura(new Factura(this.unaFactura.tipo, this.unaFactura.fecha, this.unaFactura.numero, this.unaFactura.puntoVenta, this.cliente))
+      let factura: Factura = new Factura(this.unaFactura.tipo, this.unaFactura.fecha, this.unaFactura.numero, this.unaFactura.puntoVenta, this.cliente);
+      factura.total = this.unaFactura.total;
+      this.database.agregarFactura(factura)
       //agregar items por separado
       this.database.agregarItems(this.items);
       //
@@ -90,8 +92,8 @@ export class FormFacturaComponent implements OnInit {
     {
 
       let item: Item = new Item(this.unItem.id,this.unItem.cantidad,this.unItem.codigo,this.unItem.descripcion,this.unItem.iva,this.unItem.producto,1);
-      item.precioUnitario = item.cantidad * item.producto.precioUnitario;
-      item.subtotal = item.precioUnitario + (item.precioUnitario * item.iva)/100;
+      item.precioUnitario = item.calcularTotal();
+      item.subtotal = item.calcularSubtotal();
 
       this.items.push(item);
       this.unaFactura.total = +this.unaFactura.total + +this.unItem.precioUnitario;

@@ -14,6 +14,7 @@ export class ServiceService {
   listadoProductos: Producto[] = [];
   listadoClientes: Cliente[] = [];
   listadoFacturas: Factura[] = [];
+  listadoItems: Item[] = [];
 
 
   constructor(private _httpClient: HttpClient) { }
@@ -104,6 +105,7 @@ export class ServiceService {
       () => this.getFacturas()
     );
   }
+
   agregarItems(items: Item[]){
     items.forEach(aItem => {
       this._httpClient.post(`http://localhost:4000/api/items/`,aItem).subscribe(
@@ -113,5 +115,12 @@ export class ServiceService {
         }
       )
     });
+  }
+
+  async getItems(id:number) {
+    this._httpClient.get<Item[]>(`http://localhost:4000/api/items/${id}`)
+      .subscribe(
+        (data) => this.listadoItems = data
+      );
   }
 }
